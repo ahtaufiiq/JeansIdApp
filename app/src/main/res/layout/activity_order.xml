@@ -1,154 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="@dimen/margin_24"
-    android:layout_marginRight="@dimen/margin_24"
-    android:orientation="vertical">
+
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="17dp">
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin_24"
+        android:layout_marginRight="@dimen/margin_24"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_launcher_background" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="Order"
+                android:textColor="#CB202D"
+                android:textSize="20sp"
+
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
 
         <ImageView
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:src="@drawable/ic_launcher_background"
-            android:layout_gravity="center_vertical"/>
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="@drawable/rounded_banner"
+            android:layout_marginTop="@dimen/margin_24"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher_background" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/avatar"
+                android:src="@drawable/ic_launcher_background" />
+
+            <TextView
+                android:id="@+id/namaMakanan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@id/avatar"
+                android:text="Sate Kambing Bu Esi"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/jumlahReview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/namaMakanan"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_toRightOf="@id/avatar"
+                android:text="23 reviews"
+                android:textSize="9sp" />
+
+            <RatingBar
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/namaMakanan"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="4dp"
+                android:layout_toRightOf="@id/jumlahReview"
+                android:rating="4.7" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Rp12000"
+                android:textColor="#CB202D"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:layout_marginTop="32dp"
+            android:text="Alamat Pengiriman"
             android:textColor="#CB202D"
-            android:text="Order"/>
+            android:textStyle="bold" />
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan alamat pengiriman" />
+
+        <GridLayout
+            android:id="@+id/GridLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp"
+            android:rowCount="2">
+
+            <TextView
+                android:id="@+id/labelJumlah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jumlah"
+                android:textColor="#CB202D"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextJumlah"
+                android:layout_width="wrap_content"
+                android:layout_gravity="fill"
+                android:hint="1"
+                android:textSize="20sp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/labelHarga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_24"
+                android:text="Harga"
+                android:textColor="#CB202D"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="RP 12.000"
+                android:layout_marginLeft="@dimen/margin_24"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/labelTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total"
+                android:textColor="#CB202D"
+                android:layout_marginLeft="58dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp 12000"
+                android:layout_marginLeft="58dp"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </GridLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="136dp"
+            android:layout_marginTop="@dimen/margin_24"
+            android:hint="Tambahan informasi kepada penjual"
+            android:inputType="textMultiLine"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_24"
+            android:background="@drawable/rounded_button"
+            android:elevation="8dp"
+            android:text="Order"
+            android:textColor="#F9F9F9"
+            android:textSize="20sp" />
     </LinearLayout>
 
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:scaleType="fitXY"
-        android:layout_marginTop="@dimen/margin_24"
-        android:src="@drawable/ic_launcher_background"/>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
-        <ImageView
-            android:id="@+id/avatar"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@drawable/ic_launcher_background"/>
-
-        <TextView
-            android:id="@+id/namaMakanan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/avatar"
-            android:layout_marginLeft="16dp"
-            android:textSize="16sp"
-            android:text="Sate Kambing Bu Esi"/>
-
-        <TextView
-            android:id="@+id/jumlahReview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_toRightOf="@id/avatar"
-            android:layout_below="@id/namaMakanan"
-            android:textSize="9sp"
-            android:text="23 reviews"/>
-        <RatingBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="?android:attr/ratingBarStyleSmall"
-            android:layout_below="@id/namaMakanan"
-            android:rating="4.7"
-            android:layout_marginLeft="12dp"
-            android:layout_toRightOf="@id/jumlahReview"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rp12000"
-            android:textSize="20sp"
-            android:textColor="#CB202D"
-            android:layout_alignParentRight="true" />
-    </RelativeLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:textColor="#CB202D"
-        android:text="Alamat Pengiriman"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Masukkan alamat pengiriman"
-        />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_24">
-        <TextView
-            android:id="@+id/labelJumlah"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#CB202D"
-            android:text="Jumlah"/>
-        <EditText
-            android:id="@+id/editTextJumlah"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/labelHarga"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin_24"
-            android:text="Harga"
-            android:textColor="#CB202D"
-            android:layout_toRightOf="@id/labelJumlah"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin_24"
-            android:text="RP 12.000"
-            android:textSize="20sp"
-            android:layout_toRightOf="@id/editTextJumlah"
-            android:layout_below="@id/labelHarga"/>
-        <TextView
-            android:id="@+id/labelTotal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Total"
-            android:textColor="#CB202D"
-            android:layout_alignParentRight="true"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rp 12000"
-            android:layout_alignParentRight="true"
-            android:textStyle="bold"
-            android:textSize="24sp"
-            android:layout_below="@id/labelTotal"/>
-    </RelativeLayout>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#CB202D"
-        android:text="Order"/>
-
-
-</LinearLayout>
+</ScrollView>
