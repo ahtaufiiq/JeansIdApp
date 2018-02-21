@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="385dp"
+    android:layout_height="510dp"
+    >
+
+    <TextView
+        android:layout_width="89dp"
+        android:layout_height="32dp"
+        android:layout_above="@+id/editText3"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginBottom="59dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Sign Up"
+        android:textColor="@color/Red_Dove"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="91dp"
+        android:layout_height="14dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="199dp"
+        android:text="EMAIL ADDRESS"
+        android:textColor="@color/Red_Dove"
+        android:textSize="12dp" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="312dp"
+        android:layout_height="57dp"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_alignTop="@+id/textView"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/Red_Dove" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="64dp"
+        android:layout_height="14dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="286dp"
+        android:text="PASSWORD"
+        android:textColor="@color/Red_Dove"
+        android:textSize="12dp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="312dp"
+        android:layout_height="57dp"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_alignTop="@+id/textView2"
+        android:inputType="textPassword"
+        android:textColor="@color/Red_Dove" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="102dp"
+        android:layout_height="14dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="360dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Nomor Handphone"
+        android:textColor="@color/Red_Dove"
+        android:textSize="12dp" />
+
+    <EditText
+        android:layout_width="312dp"
+        android:layout_height="57dp"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_alignTop="@+id/textView3"
+        android:inputType="phone"
+        android:textColor="@color/Red_Dove" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="312dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="448dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Daftar"
+        android:textColor="@android:color/white"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="20dp"
+        android:layout_height="10dp"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignEnd="@+id/editText2"
+        android:layout_alignRight="@+id/editText2"
+        android:text="Show"
+        android:textColor="@color/Red_Dove"
+        android:textSize="8dp" />
+
+</RelativeLayout>
