@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/screenPadding"
+    tools:context=".ReviewAfterOrder">
+
+    <TextView
+        android:id="@+id/ReviewAfterOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="24dp"
+        android:text="@string/review"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/TitleScreen"
+        android:textStyle="bold" />
+
+
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_below="@id/ReviewAfterOrder"
+        android:layout_marginTop="27dp"
+        android:src="@drawable/bu_esi"
+        />
+
+    <TextView
+        android:id="@+id/profileName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bu Esi"
+        android:textSize="24dp"
+        android:layout_toRightOf="@id/profileImage"
+        android:layout_below="@id/ReviewAfterOrder"
+        android:layout_marginTop="36dp"
+        android:layout_marginLeft="16dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlack"/>
+
+    <TextView
+        android:id="@+id/profileJobs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profileName"
+        android:layout_toRightOf="@id/profileImage"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="16dp"
+        android:text="Guru TK Bhayankari"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profileImage"
+        android:layout_marginTop="23dp"
+        android:text="Bagaimana Masakan Bu Esi?"
+        android:textColor="@color/colorBlack"/>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/question"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:transformPivotX="0dp"
+        android:transformPivotY="0dp"
+        android:isIndicator="true"
+        style="?android:attr/ratingBarStyleSmall"
+
+        android:layout_marginTop="6dp" />
+
+    <TextView
+        android:id="@+id/textArea"
+        android:layout_width="fill_parent"
+        android:layout_height="136dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/ratingBar"
+        android:layout_marginTop="36dp"
+        android:hint="Review"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
+        android:textSize="14sp"
+        android:background="@drawable/edittext_bg"
+         />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textArea"
+        android:layout_marginTop="75dp"
+        android:text="Review"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@drawable/rounded_button"/>
+
+
+</RelativeLayout>
