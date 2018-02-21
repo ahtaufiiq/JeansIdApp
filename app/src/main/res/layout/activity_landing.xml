@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LandingActivity"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="470dp"
+        android:layout_marginTop="45dp">
+
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/makanbulogo"
+            android:layout_marginRight="240dp"
+            />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Makanbu"
+        android:textStyle="bold"
+        android:textSize="24dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="24dp"
+        android:textColor="@color/Red_Dove"
+
+        />
+
+    <Button
+        android:id="@+id/google_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lanjutkan dengan google"
+        android:textColor="@color/White"
+        android:background="@drawable/rounded_button"
+        android:shadowColor="@color/BlackDove"
+        android:layout_marginTop="150dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginLeft="24dp"
+        />
+
+
+    <Button
+        android:id="@+id/regis_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrasi"
+        android:textColor="@color/Red_Dove"
+        android:background="@drawable/rounded_button2"
+        android:shadowColor="@color/BlackDove"
+        android:layout_marginTop="224dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginLeft="24dp"
+        />
+
+
+</RelativeLayout>
