@@ -12,4 +12,5 @@ public class ReviewAfterOrder extends Activity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_review_after_order);
     }
+
 }

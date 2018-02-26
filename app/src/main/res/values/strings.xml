@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">MakanBu</string>
     <string name="review">Review</string>
+    <string name="title_activity_home">Home</string>
+    <string name="tab_text_1">Berkuah</string>
+    <string name="tab_text_2">Gorengan</string>
+    <string name="tab_text_3">Cemilan</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="menus">menus</string>
+    <string name="search">search</string>
+    <string name="imageslider">imageslider</string>
 </resources>
