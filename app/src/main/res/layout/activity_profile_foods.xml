@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/textView"
         android:layout_below="@+id/textView"
-        android:isIndicator="false"/>
+        android:isIndicator="false" />
 
     <TextView
         android:id="@+id/textView2"

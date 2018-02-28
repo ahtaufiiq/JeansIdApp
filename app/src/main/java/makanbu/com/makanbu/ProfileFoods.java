@@ -7,7 +7,7 @@ public class ProfileFoods extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_profile_foods );
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_profile_foods);
     }
 }

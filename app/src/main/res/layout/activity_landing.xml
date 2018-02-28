@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LandingActivity"
-    >
+    tools:context=".LandingActivity">
 
 
     <LinearLayout
@@ -20,8 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/makanbulogo"
-            android:layout_marginRight="240dp"
-            />
+            android:layout_marginRight="240dp" />
 
     </LinearLayout>
 
@@ -46,10 +43,10 @@
         android:textColor="@color/White"
         android:background="@drawable/rounded_button"
         android:shadowColor="@color/BlackDove"
+        android:onClick="login"
         android:layout_marginTop="150dp"
         android:layout_marginRight="24dp"
-        android:layout_marginLeft="24dp"
-        />
+        android:layout_marginLeft="24dp" />
 
 
     <Button
@@ -60,10 +57,10 @@
         android:textColor="@color/Red_Dove"
         android:background="@drawable/rounded_button2"
         android:shadowColor="@color/BlackDove"
+        android:onClick="signUp"
         android:layout_marginTop="224dp"
         android:layout_marginRight="24dp"
-        android:layout_marginLeft="24dp"
-        />
+        android:layout_marginLeft="24dp" />
 
 
 </RelativeLayout>
