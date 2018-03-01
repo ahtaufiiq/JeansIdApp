@@ -72,6 +72,7 @@
         android:textSize="12dp" />
 
     <EditText
+        android:id="@+id/editText1"
         android:layout_width="312dp"
         android:layout_height="57dp"
         android:layout_alignLeft="@+id/textView3"

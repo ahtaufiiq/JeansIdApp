@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
+import android.widget.TextView;
 
 /**
  * Created by taufiq on 28/02/18.
@@ -15,7 +16,12 @@ import android.widget.EditText;
 public class OrderActivity extends Activity {
 
     EditText editTextAlamat, editTextJumlah, editTextCatatan;
-    String alamat, jumlah, catatan;
+    TextView harga;
+    String alamat;
+    String jumlah;
+    String catatan;
+    int total;
+    String hargaMakanan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +32,8 @@ public class OrderActivity extends Activity {
         editTextJumlah = findViewById(R.id.editTextJumlah);
         editTextAlamat = findViewById(R.id.alamatPengiriman);
         editTextCatatan = findViewById(R.id.catatan);
+        harga = findViewById(R.id.harga_makanan);
+
 
     }
 
@@ -33,11 +41,12 @@ public class OrderActivity extends Activity {
         alamat = editTextAlamat.getText().toString();
         jumlah = editTextJumlah.getText().toString();
         catatan = editTextCatatan.getText().toString();
-        Log.d("value", alamat);
-        Log.d("value", jumlah);
-        Log.d("value", catatan);
+        hargaMakanan=harga.getText().toString();
 
         Intent intent = new Intent(this, ReviewAfterOrder.class);
+        intent.putExtra("alamat",alamat);
+        intent.putExtra("jumlah",jumlah);
+        intent.putExtra("catatan",catatan);
         startActivity(intent);
 
     }
