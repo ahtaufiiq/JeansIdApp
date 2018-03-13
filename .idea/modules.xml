@@ -4,10 +4,12 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Makanbu.iml" filepath="$PROJECT_DIR$/Makanbu.iml" />
       <module fileurl="file://E:\Tiovani\Tugas\Semester_6\Capstone\makanbuu\Makanbu\Makanbu.iml" filepath="E:\Tiovani\Tugas\Semester_6\Capstone\makanbuu\Makanbu\Makanbu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Makanbu.iml" filepath="$PROJECT_DIR$/Makanbu.iml" />
       <module fileurl="file://C:\Users\Nonoy\Downloads\Makanbu\Makanbu.iml" filepath="C:\Users\Nonoy\Downloads\Makanbu\Makanbu.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\Nonoy\Downloads\Makanbu\app\app.iml" filepath="C:\Users\Nonoy\Downloads\Makanbu\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://E:\Tiovani\Tugas\Semester_6\Capstone\makanbuu\Makanbu\app\app.iml" filepath="E:\Tiovani\Tugas\Semester_6\Capstone\makanbuu\Makanbu\app\app.iml" />
+      <module fileurl="file://C:\Users\Nonoy\Downloads\Makanbu\app\app.iml" filepath="C:\Users\Nonoy\Downloads\Makanbu\app\app.iml" />
     </modules>
   </component>
 </project>
