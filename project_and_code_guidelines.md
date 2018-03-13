@@ -247,7 +247,7 @@ This is good:
 
 ```xml
 <TextView
-	android:id="@+id/text_view_profile"
+	android:id="@+id/tv_profile"
 	android:layout_width="wrap_content"
 	android:layout_height="wrap_content" />
 ```
@@ -257,7 +257,7 @@ This is __bad__ :
 ```xml
 <!-- Don\'t do this! -->
 <TextView
-    android:id="@+id/text_view_profile"
+    android:id="@+id/tv_profile"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" >
 </TextView>
@@ -275,16 +275,17 @@ IDs should be prefixed with the name of the element in lowercase underscore. For
 
 | Element            | Prefix            |
 | -----------------  | ----------------- |
-| `TextView`           | `text_`             |
-| `ImageView`          | `image_`            |
-| `Button`             | `button_`           |
+| `EditText`           | `et_`             |
+| `TextView`           | `tv_`             |
+| `ImageView`          | `img_`            |
+| `Button`             | `btn_`           |
 | `Menu`               | `menu_`             |
 
 Image view example:
 
 ```xml
 <ImageView
-    android:id="@+id/image_profile"
+    android:id="@+id/img_profile"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" />
 ```
