@@ -18,6 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class SignUp extends AppCompatActivity {
 
+
     // [START declare_auth]
     private FirebaseAuth mAuth;
 
@@ -50,7 +51,10 @@ public class SignUp extends AppCompatActivity {
                 createAccount(email,password);
                 Toast.makeText(SignUp.this, email,
                         Toast.LENGTH_SHORT).show();
+                
+
             }
+
         });
 
     }
