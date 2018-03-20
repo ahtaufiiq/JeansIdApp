@@ -18,7 +18,7 @@ public class profile extends AppCompatActivity {
         // Create an instance of the tab layout from the view.
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         // Set the text for each tab.
-        tabLayout.addTab(tabLayout.newTab().setText("Product"));
+        tabLayout.addTab(tabLayout.newTab().setText("Foods"));
         tabLayout.addTab(tabLayout.newTab().setText("Review"));
         // Set the tabs to fill the entire layout.
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);

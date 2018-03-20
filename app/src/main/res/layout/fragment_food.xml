@@ -33,7 +33,6 @@
                     android:layout_height="144dp"
                     android:layout_marginBottom="8dp"
                     android:background="@drawable/ikanbakar"
-
                     />
 
                 <TextView
@@ -63,13 +62,25 @@
                         android:src="@drawable/bu_esi" />
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="8dp"
                         android:text="Bu Esi"
                         android:textColor="#848484"
                         android:textSize="12sp" />
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="6dp"
+                        android:layout_marginLeft="17dp"
+                        android:numStars="5"
+                        android:rating="4.7"
+                        android:scaleX="0.6"
+                        android:scaleY="0.6"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:theme="@style/RatingBar" />
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -126,13 +137,25 @@
                         android:src="@drawable/bu_esi" />
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="8dp"
                         android:text="Bu Esi"
                         android:textColor="#848484"
                         android:textSize="12sp" />
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="6dp"
+                        android:layout_marginLeft="17dp"
+                        android:numStars="5"
+                        android:rating="4.7"
+                        android:scaleX="0.6"
+                        android:scaleY="0.6"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:theme="@style/RatingBar" />
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -188,13 +211,25 @@
                         android:src="@drawable/bu_esi" />
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="8dp"
                         android:text="Bu Esi"
                         android:textColor="#848484"
                         android:textSize="12sp" />
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="6dp"
+                        android:layout_marginLeft="17dp"
+                        android:numStars="5"
+                        android:rating="4.7"
+                        android:scaleX="0.6"
+                        android:scaleY="0.6"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:theme="@style/RatingBar" />
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -250,13 +285,25 @@
                         android:src="@drawable/bu_esi" />
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="8dp"
                         android:text="Bu Esi"
                         android:textColor="#848484"
                         android:textSize="12sp" />
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="6dp"
+                        android:layout_marginLeft="17dp"
+                        android:numStars="5"
+                        android:rating="4.7"
+                        android:scaleX="0.6"
+                        android:scaleY="0.6"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:theme="@style/RatingBar" />
+
                 </LinearLayout>
 
             </LinearLayout>

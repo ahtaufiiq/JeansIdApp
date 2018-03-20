@@ -11,7 +11,7 @@
         >
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="185dp"
+            android:layout_height="145dp"
             android:scaleType="fitXY"
             android:src="@drawable/ikanbakar" />
         <View
@@ -42,8 +42,8 @@
             android:layout_gravity="center"
             android:numStars="5"
             android:rating="4.7"
-            android:scaleY="0.5"
-            android:scaleX="0.5"
+            android:scaleY="0.4"
+            android:scaleX="0.4"
             style="?android:attr/ratingBarStyleIndicator"
             android:theme="@style/RatingBar" />
 
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_32"
             android:layout_marginRight="@dimen/margin_32"
-            android:layout_marginTop="19dp"
+            android:layout_marginTop="8dp"
             android:text="Guru TK Bhayangkari"
             android:textAlignment="center" />
 
@@ -69,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_32"
             android:layout_marginRight="@dimen/margin_32"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="9dp"
             android:orientation="horizontal">
 
             <TextView
@@ -95,7 +95,7 @@
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="9dp"
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/ViewPager"
             app:tabSelectedTextColor="#444444"
