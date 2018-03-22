@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".DetailMenuActivity">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
+        android:layout_marginLeft="22dp"
         android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/gambarMenu"
-            android:layout_width="280dp"
-            android:layout_height="150dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
             android:layout_marginTop="35dp"
             android:scaleType="fitXY"
             android:src="@drawable/ic_launcher_background" />
@@ -26,8 +24,6 @@
             android:id="@+id/namaMenu"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_alignLeft="@+id/view"
-            android:layout_alignStart="@+id/view"
             android:layout_below="@+id/gambarMenu"
             android:layout_marginTop="24dp"
             android:text="Sate Kambing Bu Esi"
@@ -43,10 +39,10 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
             android:text="Rp 18.000"
             android:textColor="@color/colorPrimary"
             android:textSize="20dp"
-            android:layout_marginRight="20dp"
             android:textStyle="bold" />
 
         <TextView
@@ -56,20 +52,21 @@
             android:layout_alignLeft="@+id/namaMenu"
             android:layout_alignStart="@+id/namaMenu"
             android:layout_below="@+id/namaMenu"
-            android:text="Sate"
-            android:layout_marginTop="3dp" />
+            android:layout_marginTop="3dp"
+            android:text="Sate" />
 
         <ImageView
+            android:id="@+id/profileImage"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_alignLeft="@+id/kategori"
             android:layout_alignStart="@+id/kategori"
             android:layout_below="@+id/kategori"
-            android:id="@+id/profileImage"
-            app:srcCompat="@mipmap/ic_launcher_round"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            app:srcCompat="@mipmap/ic_launcher_round" />
 
         <TextView
+            android:id="@+id/profileName"
             android:layout_width="wrap_content"
             android:layout_height="15dp"
             android:layout_alignTop="@+id/profileImage"
@@ -79,8 +76,7 @@
             android:layout_toRightOf="@+id/profileImage"
             android:text="Bu Esi"
             android:textColor="@color/BlackDove"
-            android:textStyle="bold"
-            android:id="@+id/profileName" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/profileJobs"
@@ -92,12 +88,12 @@
             android:text="Guru TK Bhayangkara" />
 
         <View
+            android:id="@+id/view"
             style="@style/Divider"
             android:layout_width="300dp"
             android:layout_below="@+id/profileImage"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="11dp"
-            android:id="@+id/view" />
+            android:layout_marginTop="11dp" />
 
         <TextView
             android:id="@+id/reviewHeader"
@@ -108,8 +104,8 @@
             android:layout_below="@+id/view"
             android:layout_marginTop="5dp"
             android:text="Review"
-            android:textSize="15dp"
             android:textColor="@color/BlackDove"
+            android:textSize="15dp"
             android:textStyle="bold" />
 
         <TextView
@@ -167,7 +163,7 @@
         <TextView
             android:id="@+id/reviewContent"
             android:layout_width="300dp"
-            android:layout_height="60dp"
+            android:layout_height="match_parent"
             android:layout_alignLeft="@+id/reviewImage"
             android:layout_alignStart="@+id/reviewImage"
             android:layout_below="@+id/reviewImage"
@@ -176,17 +172,66 @@
             android:text="This is review text from pemesan"
             android:textSize="9dp" />
 
+
+        <TextView
+            android:id="@+id/review_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reviewContent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="Read All Reviews"
+            android:textColor="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/makan_lain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/reviewImage"
+            android:layout_alignStart="@+id/reviewImage"
+            android:layout_alignTop="@+id/review_all"
+            android:layout_marginTop="22dp"
+            android:text="Makanan Lainnya"
+            android:textColor="@color/BlackDove"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lihat_semua"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/makan_lain"
+            android:layout_alignEnd="@+id/hargaMenu"
+            android:layout_alignRight="@+id/hargaMenu"
+            android:text="lihat semua"
+            android:textColor="@color/colorPrimary" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView_order"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/lihat_semua"
+            android:layout_marginTop="5dp">
+        </android.support.v7.widget.RecyclerView>
+
         <Button
             android:id="@+id/order_btn"
+            android:layout_below="@+id/recyclerView_order"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="22dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="@drawable/rounded_button"
             android:elevation="8dp"
-            android:text="Order"
             android:onClick="order"
+            android:text="Order"
             android:textColor="#F9F9F9"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+          />
+
+
     </RelativeLayout>
+
 
 </ScrollView>
