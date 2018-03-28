@@ -14,13 +14,13 @@
         </activity>
         <activity android:name=".LoginActivity"/>
         <activity android:name=".SignUp"/>
-        <activity android:name=".OrderActivity">
+        <activity android:name=".OrderActivity"/>
+        <activity android:name=".DetailMenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetailMenuActivity"/>
         <activity android:name=".LandingActivity"
             android:label="@string/title_activity_home" />
         <activity android:name=".ReviewAfterOrder" />

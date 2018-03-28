@@ -12,13 +12,15 @@
         android:layout_marginLeft="22dp"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/gambarMenu"
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:layout_marginTop="35dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_launcher_background" />
+            <ImageView
+                android:id="@+id/gambarMenu"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="35dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_launcher_background" />
+
+
 
         <TextView
             android:id="@+id/namaMenu"

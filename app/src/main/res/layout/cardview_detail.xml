@@ -7,29 +7,29 @@
 
 
     <ImageView
-        android:id="@+id/gambar_lain"
+        android:id="@+id/gambar_card"
         android:layout_width="300dp"
         android:layout_height="160dp"
         android:layout_centerHorizontal="true"
         app:srcCompat="@drawable/ayam" />
 
     <ImageView
-        android:id="@+id/profileImage_lain"
+        android:id="@+id/profileImage_card"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:srcCompat="@drawable/bu_esi"
-        android:layout_below="@+id/gambar_lain"
+        android:layout_below="@+id/gambar_card"
         android:layout_marginTop="10dp"/>
 
     <TextView
-        android:id="@+id/nama_menu"
+        android:id="@+id/namaMenu_card"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/profileImage_lain"
+        android:layout_alignTop="@+id/profileImage_card"
         android:layout_marginLeft="14dp"
         android:layout_marginStart="14dp"
-        android:layout_toEndOf="@+id/profileImage_lain"
-        android:layout_toRightOf="@+id/profileImage_lain"
+        android:layout_toEndOf="@+id/profileImage_card"
+        android:layout_toRightOf="@+id/profileImage_card"
         android:text="Ikan Bakar Mama"
         android:textColor="@color/BlackDove"
         android:textSize="18dp"
@@ -39,13 +39,13 @@
         android:id="@+id/jumlahReview_card"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/profileImage_lain"
-        android:layout_alignLeft="@+id/nama_menu"
-        android:layout_alignStart="@+id/nama_menu"
+        android:layout_alignBottom="@+id/profileImage_card"
+        android:layout_alignLeft="@+id/namaMenu_card"
+        android:layout_alignStart="@+id/namaMenu_card"
         android:text="23 reviews" />
 
     <RatingBar
-        android:id="@+id/ratingBar2"
+        android:id="@+id/rating_card"
         style="?android:attr/ratingBarStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,14 +54,14 @@
         android:rating="4.0"/>
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/hargaMakanan_card"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/ratingBar2"
+        android:layout_above="@+id/rating_card"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
-        android:layout_toEndOf="@+id/ratingBar2"
-        android:layout_toRightOf="@+id/ratingBar2"
+        android:layout_toEndOf="@+id/rating_card"
+        android:layout_toRightOf="@+id/rating_card"
         android:text="Rp 18000"
         android:textColor="@color/colorPrimary"
         android:textSize="25dp"
