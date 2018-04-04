@@ -51,7 +51,7 @@ public class SignUp extends AppCompatActivity {
                 createAccount(email,password);
                 Toast.makeText(SignUp.this, email,
                         Toast.LENGTH_SHORT).show();
-                
+
 
             }
 
@@ -82,4 +82,9 @@ public class SignUp extends AppCompatActivity {
         // [END create_user_with_email]
     }
 
+
+    public void back(View view) {
+        Intent intent = new Intent(SignUp.this, LoginActivity.class);
+        startActivity(intent);
+    }
 }
