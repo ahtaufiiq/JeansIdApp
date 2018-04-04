@@ -16,7 +16,7 @@ public class ReviewAfterOrder extends Activity {
     }
 
     public void review(View view) {
-        Intent intent = new Intent(this, ProfileFoods.class);
+        Intent intent = new Intent(this, profile.class);
         startActivity(intent);
     }
 }
