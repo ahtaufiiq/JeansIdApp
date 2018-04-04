@@ -22,7 +22,6 @@
         <activity android:name=".OrderActivity"/>
         <activity android:name=".DetailMenuActivity"/>
         <activity android:name=".ReviewAfterOrder" />
-        <activity android:name=".ProfileFoods" />
     </application>
 
 </manifest>

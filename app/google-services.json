@@ -8,6 +8,50 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:778202324524:android:ae4c82dafda90f10",
+        "android_client_info": {
+          "package_name": "com.ataufiq.pushnotification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "778202324524-fqpvlack0agce2hvkdgjqb1ma5itsanl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ataufiq.pushnotification",
+            "certificate_hash": "dad5df97b5667c0bf87e01f47257215ac1b028ff"
+          }
+        },
+        {
+          "client_id": "778202324524-d5ouc5bkpskkdj848as8kaokjtpuhlu2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOkjh-Hr00-aWzpIv2mcY4IHWNf8CEQNE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "778202324524-d5ouc5bkpskkdj848as8kaokjtpuhlu2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:778202324524:android:f63b59a6b9b1023e",
         "android_client_info": {
           "package_name": "com.makanbu"
@@ -52,17 +96,33 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:778202324524:android:93d5402690612f7b",
+        "mobilesdk_app_id": "1:778202324524:android:86fd7e5c120d841c",
         "android_client_info": {
-          "package_name": "taufiq.com.trynetworking"
+          "package_name": "makanbu.com.makanbu"
         }
       },
       "oauth_client": [
         {
-          "client_id": "778202324524-kf1feb8mbnqfoet2nv5fbesublvvif0r.apps.googleusercontent.com",
+          "client_id": "778202324524-318lhjn9fll19l2d976pm6mrdj4v7i02.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "taufiq.com.trynetworking",
+            "package_name": "makanbu.com.makanbu",
+            "certificate_hash": "9e9bcf3b1e7ade0783a295e654ac67bf3e01de04"
+          }
+        },
+        {
+          "client_id": "778202324524-flheam2n09tg7pq0llm3er0eas98a0ml.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "makanbu.com.makanbu",
+            "certificate_hash": "dad5df97b5667c0bf87e01f47257215ac1b028ff"
+          }
+        },
+        {
+          "client_id": "778202324524-58csinvncdtfq86moh494dogc09pq0kd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "makanbu.com.makanbu",
             "certificate_hash": "f28c8cd07e3f714f35f0686968844ff113d61453"
           }
         },
@@ -96,17 +156,17 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:778202324524:android:86fd7e5c120d841c",
+        "mobilesdk_app_id": "1:778202324524:android:93d5402690612f7b",
         "android_client_info": {
-          "package_name": "makanbu.com.makanbu"
+          "package_name": "taufiq.com.trynetworking"
         }
       },
       "oauth_client": [
         {
-          "client_id": "778202324524-58csinvncdtfq86moh494dogc09pq0kd.apps.googleusercontent.com",
+          "client_id": "778202324524-kf1feb8mbnqfoet2nv5fbesublvvif0r.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "makanbu.com.makanbu",
+            "package_name": "taufiq.com.trynetworking",
             "certificate_hash": "f28c8cd07e3f714f35f0686968844ff113d61453"
           }
         },
