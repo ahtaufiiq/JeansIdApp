@@ -24,7 +24,6 @@
         <activity android:name=".LandingActivity"
             android:label="@string/title_activity_home" />
         <activity android:name=".ReviewAfterOrder" />
-        <activity android:name=".ProfileFoods" />
     </application>
 
 </manifest>

@@ -58,8 +58,6 @@ public class SignUp extends AppCompatActivity {
         });
 
     }
-
-
     private void createAccount(String email, String password) {
         Log.d(TAG, "createAccount:" + email);
 
