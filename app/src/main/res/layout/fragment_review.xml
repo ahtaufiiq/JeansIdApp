@@ -44,7 +44,7 @@
                     android:rating="4.7"
                     android:scaleX="1.5"
                     android:scaleY="1.5"
-                    style="?android:attr/ratingBarStyleSmall"
+                    style="@style/Base.Widget.AppCompat.RatingBar.Small"
                     android:theme="@style/RatingBar" />
 
                 <TextView

@@ -9,7 +9,10 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Toast;
 
+
 public class Home extends AppCompatActivity {
+
+    public static final String table_3 = "User";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
