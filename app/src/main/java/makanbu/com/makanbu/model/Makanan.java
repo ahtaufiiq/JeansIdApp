@@ -6,6 +6,9 @@ public class Makanan {
     String hargaMakanan;
     String description;
 
+    public Makanan() {
+    }
+
     public Makanan(String namaMakanan, String hargaMakanan, String description) {
         this.namaMakanan = namaMakanan;
         this.hargaMakanan = hargaMakanan;

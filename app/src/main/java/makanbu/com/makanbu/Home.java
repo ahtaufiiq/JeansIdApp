@@ -1,5 +1,6 @@
 package makanbu.com.makanbu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -9,11 +10,14 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 
 public class Home extends AppCompatActivity {
 
     public static final String table_3 = "User";
-
+    // [START declare_auth]
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +26,7 @@ public class Home extends AppCompatActivity {
 
         // Create an instance of the tab layout from the view.
         TabLayout tabLayout = findViewById(R.id.tab_layout);
-
+        mAuth = FirebaseAuth.getInstance();
         // Set the text for each tab.
         tabLayout.addTab(tabLayout.newTab().setText("Berkuah"));
         tabLayout.addTab(tabLayout.newTab().setText("Gorengan"));
@@ -57,6 +61,14 @@ public class Home extends AppCompatActivity {
         });
 
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (mAuth==null){
+            Intent i = new Intent(Home.this,LandingActivity.class);
+            startActivity(i);
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -72,14 +84,21 @@ public class Home extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case R.id.menus:
+                mAuth.signOut();
                 Toast.makeText(this, "Ini menunya", Toast.LENGTH_SHORT).show();
                 return true;
 
             case R.id.searchh:
+                signOut();
                 Toast.makeText(this, "Ini pencarian", Toast.LENGTH_SHORT).show();
                 return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void signOut(){
+        mAuth.signOut();
+        Intent i = new Intent(Home.this,LandingActivity.class);
+        startActivity(i);
     }
 }

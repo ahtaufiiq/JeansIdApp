@@ -5,16 +5,49 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import makanbu.com.makanbu.model.User;
 
 public class profile extends AppCompatActivity {
 
+    FirebaseAuth mAuth;
+    DatabaseReference databaseUser;
+    TextView nama,Password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_profile);
 
+        nama = findViewById(R.id.namaUser);
+        Password= findViewById(R.id.harga_makanan);
+        mAuth= FirebaseAuth.getInstance();
+        String id = mAuth.getUid();
 
+        databaseUser = FirebaseDatabase.getInstance().getReference("Profile").child(id);
+
+        databaseUser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                User user= dataSnapshot.getValue(User.class);
+                nama.setText(user.getEmail());
+                Password.setText(user.getNomerHandphone());
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
         // Create an instance of the tab layout from the view.
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         // Set the text for each tab.

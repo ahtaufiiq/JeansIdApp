@@ -56,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
+
     private void signIn(String email, String password) {
 
         // [START sign_in_with_email]
@@ -65,6 +66,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
+
                             FirebaseUser user = mAuth.getCurrentUser();
                             Intent intent = new Intent(LoginActivity.this, Home.class);
                             startActivity(intent);

@@ -29,6 +29,7 @@
             android:src="@drawable/bu_esi" />
 
         <TextView
+            android:id="@+id/namaUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Bu Esi"
@@ -48,7 +49,7 @@
             android:theme="@style/RatingBar" />
 
         <TextView
-
+            android:id="@+id/harga_makanan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="4.7 stars"
