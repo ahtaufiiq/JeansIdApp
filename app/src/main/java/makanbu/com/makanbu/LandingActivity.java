@@ -19,6 +19,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * Created by SP-SHOCK on 2/21/2018.
@@ -34,6 +36,8 @@ public class LandingActivity extends AppCompatActivity {
 
     private GoogleSignInClient mGoogleSignInClient;
 
+    private DatabaseReference mUserDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,14 +51,28 @@ public class LandingActivity extends AppCompatActivity {
                 .build();
         // [END config_signin]
 
+        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
+
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         // [START initialize_auth]
         mAuth = FirebaseAuth.getInstance();
+
         // [END initialize_auth]
     }
 
-    public void login(View view) {
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            Intent intent = new Intent(LandingActivity.this,Home.class);
+            startActivity(intent);
+        }
+
+    }
+
+    public void login_google(View view) {
         signIn();
     }
 
@@ -74,6 +92,7 @@ public class LandingActivity extends AppCompatActivity {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account);
+                Log.w(TAG, "Google sign in Success");
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);

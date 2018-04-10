@@ -16,4 +16,6 @@
     <dimen name="margin_32">32dp</dimen>
     <dimen name="margin_15">15dp</dimen>
     <dimen name="elevation">8dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="size_avatar">36dp</dimen>
 </resources>
