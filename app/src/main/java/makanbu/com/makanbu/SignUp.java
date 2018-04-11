@@ -40,7 +40,7 @@ public class SignUp extends AppCompatActivity {
         eml = (EditText) findViewById(R.id.et_email);
         pass = (EditText) findViewById(R.id.et_password);
 
-        button= findViewById(R.id.button);
+        button= findViewById(R.id.btn_daftar);
         databaseUser = FirebaseDatabase.getInstance().getReference("Profile");
         // [START initialize_auth]
         mAuth = FirebaseAuth.getInstance();
