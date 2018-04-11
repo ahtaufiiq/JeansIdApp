@@ -1,4 +1,4 @@
-package makanbu.com.makanbu;
+package makanbu.com.makanbu.profileScreen;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -14,9 +14,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import makanbu.com.makanbu.R;
 import makanbu.com.makanbu.model.User;
 
-public class profile extends AppCompatActivity {
+public class Profile extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     DatabaseReference databaseUser;
@@ -58,7 +59,7 @@ public class profile extends AppCompatActivity {
 
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-        final makanbu.com.makanbu.PagerAdapter adapter = new makanbu.com.makanbu.PagerAdapter
+        final PagerAdapter adapter = new PagerAdapter
                 (getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
         viewPager.setAdapter(adapter);

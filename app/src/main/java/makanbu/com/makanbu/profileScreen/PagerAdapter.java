@@ -1,18 +1,20 @@
-package makanbu.com.makanbu;
+package makanbu.com.makanbu.profileScreen;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import makanbu.com.makanbu.profileScreen.FragmentFood;
+import makanbu.com.makanbu.profileScreen.FragmentReview;
+
 /**
- * Created by HP on 3/17/2018.
+ * Created by khalidaziaamrina on 16/03/18.
  */
 
-public class PagerAdapterHome extends FragmentStatePagerAdapter {
-
+public class PagerAdapter  extends FragmentStatePagerAdapter {
     int mNumOfTabs;
 
-    public PagerAdapterHome(FragmentManager fm, int NumOfTabs) {
+    public PagerAdapter(FragmentManager fm, int NumOfTabs) {
         super(fm);
         this.mNumOfTabs = NumOfTabs;
     }
@@ -22,11 +24,9 @@ public class PagerAdapterHome extends FragmentStatePagerAdapter {
 
         switch (position) {
             case 0:
-                return new Berkuah();
+                return new FragmentFood();
             case 1:
-                return new Gorengan();
-            case 2:
-                return new Cemilan();
+                return new FragmentReview();
             default:
                 return null;
         }

@@ -1,4 +1,4 @@
-package makanbu.com.makanbu;
+package makanbu.com.makanbu.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,9 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.List;
+
+import makanbu.com.makanbu.R;
+import makanbu.com.makanbu.detailMenuList;
 
 /**
  * Created by Labbaika Putri on 3/26/2018.

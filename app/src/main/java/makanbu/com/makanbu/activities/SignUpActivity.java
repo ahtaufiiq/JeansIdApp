@@ -1,4 +1,4 @@
-package makanbu.com.makanbu;
+package makanbu.com.makanbu.activities;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -14,13 +14,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import makanbu.com.makanbu.R;
 import makanbu.com.makanbu.model.User;
 
-public class SignUp extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
 
 
     // [START declare_auth]
@@ -53,7 +53,7 @@ public class SignUp extends AppCompatActivity {
                 password = pass.getText().toString();
 
                 createAccount(email,password);
-                Toast.makeText(SignUp.this, email,
+                Toast.makeText(SignUpActivity.this, email,
                         Toast.LENGTH_SHORT).show();
 
 
@@ -79,7 +79,7 @@ public class SignUp extends AppCompatActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(SignUp.this, "Authentication failed.",
+                            Toast.makeText(SignUpActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
 
                         }
@@ -90,7 +90,7 @@ public class SignUp extends AppCompatActivity {
 
 
     public void back(View view) {
-        Intent intent = new Intent(SignUp.this, LoginActivity.class);
+        Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
         startActivity(intent);
     }
 }

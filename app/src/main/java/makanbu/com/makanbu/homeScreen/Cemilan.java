@@ -1,4 +1,4 @@
-package makanbu.com.makanbu;
+package makanbu.com.makanbu.homeScreen;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,15 +6,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by khalidaziaamrina on 16/03/18.
- */
+import makanbu.com.makanbu.R;
 
-public class FragmentFood extends Fragment {
+
+public class Cemilan extends Fragment {
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_food, container, false);
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_cemilan, container, false);
     }
-
 }

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="makanbu.com.makanbu.Gorengan">
+    tools:context="makanbu.com.makanbu.homeScreen.Gorengan">
 
     <ScrollView
         android:id="@+id/listProduct"

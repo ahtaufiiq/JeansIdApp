@@ -1,4 +1,4 @@
-package makanbu.com.makanbu;
+package makanbu.com.makanbu.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,6 +21,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import makanbu.com.makanbu.R;
+import makanbu.com.makanbu.homeScreen.Home;
 
 /**
  * Created by SP-SHOCK on 2/21/2018.
@@ -77,7 +80,7 @@ public class LandingActivity extends AppCompatActivity {
     }
 
     public void signUp(View view) {
-        Intent intent = new Intent(this, SignUp.class);
+        Intent intent = new Intent(this, SignUpActivity.class);
         startActivity(intent);
     }
 

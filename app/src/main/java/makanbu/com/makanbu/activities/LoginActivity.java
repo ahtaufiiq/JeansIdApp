@@ -1,9 +1,8 @@
-package makanbu.com.makanbu;
+package makanbu.com.makanbu.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -15,10 +14,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
-import java.io.LineNumberReader;
+import makanbu.com.makanbu.R;
+import makanbu.com.makanbu.homeScreen.Home;
 
 /**
  * Created by SP-SHOCK on 2/21/2018.
@@ -83,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void Move(View view) {
 
-        Intent pindah = new Intent(LoginActivity.this, SignUp.class);
+        Intent pindah = new Intent(LoginActivity.this, SignUpActivity.class);
         startActivity(pindah);
     }
 }

@@ -1,4 +1,4 @@
-package makanbu.com.makanbu;
+package makanbu.com.makanbu.homeScreen;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,9 @@ import android.view.Window;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+
+import makanbu.com.makanbu.activities.LandingActivity;
+import makanbu.com.makanbu.R;
 
 
 public class Home extends AppCompatActivity {
