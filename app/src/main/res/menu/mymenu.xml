@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.marissagift.homee.Home">
     <item
-        android:id="@+id/menus"
+        android:id="@+id/menu"
         android:title="Menu"
         app:showAsAction="always"
         android:icon="@drawable/ic_subject"/>
 
     <item
-        android:id="@+id/searchh"
+        android:id="@+id/search"
         android:title="Search"
         app:showAsAction="always"
         android:icon="@drawable/ic_search" />

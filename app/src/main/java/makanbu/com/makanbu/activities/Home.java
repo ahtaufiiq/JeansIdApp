@@ -92,12 +92,12 @@ public class Home extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
-            case R.id.menus:
+            case R.id.menu:
                 mAuth.signOut();
                 Toast.makeText(this, "Ini menunya", Toast.LENGTH_SHORT).show();
                 return true;
 
-            case R.id.searchh:
+            case R.id.search:
                 signOut();
                 Toast.makeText(this, "Ini pencarian", Toast.LENGTH_SHORT).show();
                 return true;

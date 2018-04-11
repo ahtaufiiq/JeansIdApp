@@ -26,12 +26,12 @@ public class DetailMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_menu);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        gambar_card = findViewById(R.id.gambar_card);
-        profileImage_card = findViewById(R.id.profileImage_card);
-        namaMenu_card = findViewById(R.id.namaMenu_card);
-        jumlahReview_card = findViewById(R.id.jumlahReview_card);
-        hargaMakanan_card = findViewById(R.id.hargaMakanan_card);
-        rating_card = findViewById(R.id.rating_card);
+//        gambar_card = findViewById(R.id.img_masakan);
+//        profileImage_card = findViewById(R.id.img_avatar);
+//        namaMenu_card = findViewById(R.id.tv_nama_makanan);
+//        jumlahReview_card = findViewById(R.id.tv_jumlah_review);
+//        hargaMakanan_card = findViewById(R.id.hargaMakanan_card);
+//        rating_card = findViewById(R.id.rb_makanan);
 
 
     }

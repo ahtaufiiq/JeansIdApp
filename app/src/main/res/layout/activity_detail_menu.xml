@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailMenuActivity">
+    tools:context=".activities.DetailMenuActivity">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -111,7 +111,7 @@
             android:id="@+id/tv_total_review"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/tv_review_header"
+            android:layout_alignBottom="@+id/reviewHeader"
             android:layout_toEndOf="@+id/tv_nama_penjual"
             android:layout_toRightOf="@+id/tv_nama_penjual"
             android:text="(Total Reviews)"
@@ -133,9 +133,9 @@
             android:id="@+id/img_reviewer"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:layout_alignLeft="@+id/tv_review_header"
-            android:layout_alignStart="@+id/tv_review_header"
-            android:layout_below="@+id/tv_review_header"
+            android:layout_alignLeft="@+id/reviewHeader"
+            android:layout_alignStart="@+id/reviewHeader"
+            android:layout_below="@+id/reviewHeader"
             android:layout_marginTop="5dp"
             android:src="@drawable/avatar" />
 
