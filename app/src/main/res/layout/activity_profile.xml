@@ -4,99 +4,72 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="#FFFFFF"
-        >
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="145dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/ikanbakar" />
-        <View
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="-45dp"
-            android:background="#FFFFFF" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="-94dp"
-            android:src="@drawable/bu_esi" />
-
-        <TextView
-            android:id="@+id/namaUser"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Bu Esi"
-            android:textAlignment="center"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <RatingBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:numStars="5"
-            android:rating="4.7"
-            android:scaleY="0.4"
-            android:scaleX="0.4"
-            style="?android:attr/ratingBarStyleIndicator"
-            android:theme="@style/RatingBar" />
-
-        <TextView
-            android:id="@+id/harga_makanan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="4.7 stars"
-            android:textAlignment="center"
-            android:textSize="10sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin_32"
-            android:layout_marginRight="@dimen/margin_32"
-            android:layout_marginTop="8dp"
-            android:text="Guru TK Bhayangkari"
-            android:textAlignment="center" />
+            android:layout_width="74dp"
+            android:layout_height="74dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/buesii" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="192dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin_32"
-            android:layout_marginRight="@dimen/margin_32"
-            android:layout_marginTop="9dp"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:paddingLeft="15dp">
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Bandung"
-                android:textAlignment="center"
-                android:textSize="10sp" />
-
+                android:letterSpacing="0.05"
+                android:lineSpacingExtra="2.2dp"
+                android:text="Bu Esi"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"/>
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Guru TK Bhayangkari"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Jl. Sukabirus"
-                android:textAlignment="center"
-                android:textSize="10sp" />
+                android:orientation="horizontal">
 
-
-        </LinearLayout>
-
+                <RatingBar
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:paddingTop="6dp"
+                    android:rating="4.7"
+                    android:scaleX="0.6"
+                    android:scaleY="0.6"
+                    android:theme="@style/RatingBar" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:letterSpacing="0.05"
+                    android:paddingBottom="10dp"
+                    android:text="4,7"
+                    android:textSize="10sp" />
+            </LinearLayout>
+            </LinearLayout>
+    </LinearLayout>
         <android.support.design.widget.TabLayout
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="9dp"
+            android:layout_marginTop="12dp"
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/ViewPager"
             app:tabSelectedTextColor="#444444"
@@ -108,7 +81,5 @@
             android:background="#FFFFFF"
             android:layout_height="553dp"
             android:layout_below="@id/tab_layout" />
-
-    </LinearLayout>
-
+ </LinearLayout>
 </ScrollView>
