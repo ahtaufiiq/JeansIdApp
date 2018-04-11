@@ -1,4 +1,4 @@
-package makanbu.com.makanbu;
+package makanbu.com.makanbu.homeScreen;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
+import makanbu.com.makanbu.R;
 import makanbu.com.makanbu.adapter.MakananAdapter;
 import makanbu.com.makanbu.model.Makanan;
 

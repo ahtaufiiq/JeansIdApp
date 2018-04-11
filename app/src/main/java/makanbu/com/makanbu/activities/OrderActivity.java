@@ -1,9 +1,8 @@
-package makanbu.com.makanbu;
+package makanbu.com.makanbu.activities;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
@@ -13,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import makanbu.com.makanbu.R;
 import makanbu.com.makanbu.model.Order;
 
 /**
@@ -54,11 +54,11 @@ public class OrderActivity extends Activity {
         String id = databaseOrder.push().getKey();
         Order order = new Order(alamat,jumlah,catatan,hargaMakanan);
         databaseOrder.child(id).setValue(order);
-        Intent intent = new Intent(this, ReviewAfterOrder.class);
+        Intent intent = new Intent(this, ReviewActivity.class);
         intent.putExtra("alamat",alamat);
         intent.putExtra("jumlah",jumlah);
         intent.putExtra("catatan",catatan);
-
+//        startActivity(intent);
 
     }
 }

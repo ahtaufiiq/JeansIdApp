@@ -35,16 +35,19 @@
 
                 <RatingBar
                     android:id="@+id/ratingBar"
+                    style="@style/Base.Widget.AppCompat.RatingBar.Small"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/rating"
-                    android:paddingTop="8dp"
-                    android:layout_marginLeft="26dp"
+                    android:layout_alignLeft="@+id/textView4"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignStart="@+id/textView4"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginStart="13dp"
                     android:numStars="5"
+                    android:paddingTop="8dp"
                     android:rating="4.7"
                     android:scaleX="1.5"
                     android:scaleY="1.5"
-                    style="@style/Base.Widget.AppCompat.RatingBar.Small"
                     android:theme="@style/RatingBar" />
 
                 <TextView
@@ -55,7 +58,8 @@
                     android:layout_below="@id/ratingBar"
                     android:layout_marginLeft="13dp"
                     android:textSize="10sp"
-                    android:text="from 20 people" />
+                    android:text="from 20 people"
+                    android:id="@+id/textView4" />
 
 
             </RelativeLayout>

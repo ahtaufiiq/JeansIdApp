@@ -1,4 +1,4 @@
-package makanbu.com.makanbu;
+package makanbu.com.makanbu.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 
-public class ReviewAfterOrder extends Activity {
+import makanbu.com.makanbu.R;
+import makanbu.com.makanbu.profileScreen.Profile;
+
+public class ReviewActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +19,7 @@ public class ReviewAfterOrder extends Activity {
     }
 
     public void review(View view) {
-        Intent intent = new Intent(this, profile.class);
+        Intent intent = new Intent(this, Profile.class);
         startActivity(intent);
     }
 }

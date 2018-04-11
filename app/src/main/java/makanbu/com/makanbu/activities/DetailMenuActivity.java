@@ -1,4 +1,4 @@
-package makanbu.com.makanbu;
+package makanbu.com.makanbu.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
+import makanbu.com.makanbu.R;
 
 /**
  * Created by Labbaika Putri on 2/21/2018.

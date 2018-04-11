@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="makanbu.com.makanbu.Berkuah">
+    tools:context="makanbu.com.makanbu.homeScreen.Berkuah">
 
     <ScrollView
         android:id="@+id/listProduct"
@@ -107,6 +107,8 @@
                             android:layout_height="wrap_content"
                             android:gravity="end"
                             android:text="Rp 18000"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
                             android:textColor="@color/colorPrimary" />
 
 
@@ -192,6 +194,8 @@
                             android:layout_height="wrap_content"
                             android:gravity="end"
                             android:text="Rp 13000"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
                             android:textColor="@color/colorPrimary" />
                     </LinearLayout>
                 </LinearLayout>
