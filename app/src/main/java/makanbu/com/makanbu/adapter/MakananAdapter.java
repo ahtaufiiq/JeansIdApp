@@ -49,8 +49,8 @@ public class MakananAdapter extends RecyclerView.Adapter<MakananAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final Makanan comment= postList.get(position);
 
-        holder.mUsername.setText(comment.getNamaMakanan());
-        holder.mComment.setText(comment.getHargaMakanan());
+        holder.mUsername.setText(comment.getNamaMenu_card());
+        holder.mComment.setText(comment.getJumlahReview_card());
 
     }
 //    private void setupImageRounded() {

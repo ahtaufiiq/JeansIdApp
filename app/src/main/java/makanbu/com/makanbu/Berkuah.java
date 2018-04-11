@@ -35,7 +35,7 @@ public class Berkuah extends Fragment {
 
         listPosts = new ArrayList<>();
 
-        listPosts.add(new Makanan("Nasi Goreng","10000","Makan Lah"));
+//        listPosts.add(new Makanan(""));
 
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
 
