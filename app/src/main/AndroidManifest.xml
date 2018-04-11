@@ -9,21 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LandingActivity">
+        <activity android:name=".Home">
 
         </activity>
         <activity android:name=".LoginActivity"
             android:label="@string/title_activity_home" />
-        <activity android:name=".Home"/>
+
         <activity android:name=".SignUp"/>
-        <activity android:name=".OrderActivity"/>
-        <activity android:name=".DetailMenuActivity"/>
-        <activity android:name=".ReviewAfterOrder" />
-        <activity android:name=".profile">
+        <activity android:name=".OrderActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".DetailMenuActivity"/>
+        <activity android:name=".ReviewAfterOrder" />
+        <activity android:name=".profile">
+
         </activity>
     </application>
 

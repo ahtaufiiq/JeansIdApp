@@ -103,6 +103,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "778202324524-o603b46amb0c7q3e3ojg41s7793h5c01.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "makanbu.com.makanbu",
+            "certificate_hash": "b09c6051b444befe654b6eb0c35b6cc1a2b1f02f"
+          }
+        },
+        {
+          "client_id": "778202324524-bt1p4lul7k9c7u4mbu3v6lsndkvomnub.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "makanbu.com.makanbu",
+            "certificate_hash": "ac12fdc28b2235b7cddef13a56d50b625f2bc993"
+          }
+        },
+        {
           "client_id": "778202324524-318lhjn9fll19l2d976pm6mrdj4v7i02.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
