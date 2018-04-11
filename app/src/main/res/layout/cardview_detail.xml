@@ -1,72 +1,108 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginLeft="22dp"
-    android:id="@+id/cardView"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:id="@+id/listProduct"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/gambar_card"
-        android:layout_width="300dp"
-        android:layout_height="160dp"
-        android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/ayam" />
-
-    <ImageView
-        android:id="@+id/profileImage_card"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/bu_esi"
-        android:layout_below="@+id/gambar_card"
-        android:layout_marginTop="10dp"/>
-
-    <TextView
-        android:id="@+id/namaMenu_card"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/profileImage_card"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp"
-        android:layout_toEndOf="@+id/profileImage_card"
-        android:layout_toRightOf="@+id/profileImage_card"
-        android:text="Ikan Bakar Mama"
-        android:textColor="@color/BlackDove"
-        android:textSize="18dp"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/jumlahReview_card"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/profileImage_card"
-        android:layout_alignLeft="@+id/namaMenu_card"
-        android:layout_alignStart="@+id/namaMenu_card"
-        android:text="23 reviews" />
-
-    <RatingBar
-        android:id="@+id/rating_card"
-        style="?android:attr/ratingBarStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/jumlahReview_card"
-        android:layout_centerHorizontal="true"
-        android:rating="4.0"/>
-
-    <TextView
-        android:id="@+id/hargaMakanan_card"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/rating_card"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_toEndOf="@+id/rating_card"
-        android:layout_toRightOf="@+id/rating_card"
-        android:text="Rp 18000"
-        android:textColor="@color/colorPrimary"
-        android:textSize="25dp"
-        android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
 
-</RelativeLayout>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="18dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="144dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/ayam" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:src="@drawable/buesii" />
+
+                        <LinearLayout
+                            android:layout_width="192dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingLeft="15dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:letterSpacing="0.05"
+                                android:lineSpacingExtra="2.2dp"
+                                android:text="Ayam Goreng Mama"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:letterSpacing="0.05"
+                                    android:paddingBottom="10dp"
+                                    android:text="23 Reviews"
+                                    android:textSize="10sp" />
+
+                                <RatingBar
+                                    style="?android:attr/ratingBarStyleSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:numStars="5"
+                                    android:paddingTop="6dp"
+                                    android:rating="4.7"
+                                    android:scaleX="0.6"
+                                    android:scaleY="0.6"
+                                    android:theme="@style/RatingBar" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:text="Rp 16000"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorPrimary" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
