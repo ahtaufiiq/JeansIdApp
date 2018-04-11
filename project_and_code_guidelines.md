@@ -35,6 +35,7 @@ Naming conventions for icons (taken from [Android iconography guidelines](http:/
 
 | Asset Type                      | Prefix             | Example                      |
 | --------------------------------| ----------------   | ---------------------------- |
+| Image                           | `img_`              | `img_nasi_goreng.png`                |
 | Icons                           | `ic_`              | `ic_star.png`                |
 | Launcher icons                  | `ic_launcher`      | `ic_launcher_calendar.png`   |
 | Menu icons and Action Bar icons | `ic_menu`          | `ic_menu_archive.png`        |
@@ -78,6 +79,84 @@ A good practice is to not include the word `menu` as part of the name because th
 #### 1.2.2.4 Values files
 
 Resource files in the values folder should be __plural__, e.g. `strings.xml`, `styles.xml`, `colors.xml`, `dimens.xml`, `attrs.xml`
+
+## 2.3 XML style rules
+
+### 2.3.1 Use self closing tags
+
+When an XML element doesn't have any contents, you __must__ use self closing tags.
+
+This is good:
+
+```xml
+<TextView
+	android:id="@+id/tv_profile"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content" />
+```
+
+This is __bad__ :
+
+```xml
+<!-- Don\'t do this! -->
+<TextView
+    android:id="@+id/tv_profile"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+</TextView>
+```
+
+
+### 2.3.2 Resources naming
+
+Resource IDs and names are written in __lowercase_underscore__.
+
+#### 2.3.2.1 ID naming
+
+IDs should be prefixed with the name of the element in lowercase underscore. For example:
+
+
+| Element            | Prefix            |
+| -----------------  | ----------------- |
+| `EditText`           | `et_`             |
+| `TextView`           | `tv_`             |
+| `ImageView`          | `img_`            |
+| `Button`             | `btn_`           |
+| `Menu`               | `menu_`             |
+
+Image view example:
+
+```xml
+<ImageView
+    android:id="@+id/img_profile"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+```
+
+Menu example:
+
+```xml
+<menu>
+	<item
+        android:id="@+id/menu_done"
+        android:title="Done" />
+</menu>
+```
+
+#### 2.3.2.2 Strings
+
+String names start with a prefix that identifies the section they belong to. For example `registration_email_hint` or `registration_name_hint`. If a string __doesn't belong__ to any section, then you should follow the rules below:
+
+
+| Prefix             | Description                           |
+| -----------------  | --------------------------------------|
+| `error_`             | An error message                      |
+| `msg_`               | A regular information message         |
+| `title_`             | A title, i.e. a dialog title          |
+| `action_`            | An action such as "Save" or "Create"  |
+
+
+
 
 # 2 Code guidelines
 
@@ -235,81 +314,5 @@ loadPicture(context,
         clickListener,
         "Title of the picture");
 ```
-
-
-## 2.3 XML style rules
-
-### 2.3.1 Use self closing tags
-
-When an XML element doesn't have any contents, you __must__ use self closing tags.
-
-This is good:
-
-```xml
-<TextView
-	android:id="@+id/tv_profile"
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content" />
-```
-
-This is __bad__ :
-
-```xml
-<!-- Don\'t do this! -->
-<TextView
-    android:id="@+id/tv_profile"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" >
-</TextView>
-```
-
-
-### 2.3.2 Resources naming
-
-Resource IDs and names are written in __lowercase_underscore__.
-
-#### 2.3.2.1 ID naming
-
-IDs should be prefixed with the name of the element in lowercase underscore. For example:
-
-
-| Element            | Prefix            |
-| -----------------  | ----------------- |
-| `EditText`           | `et_`             |
-| `TextView`           | `tv_`             |
-| `ImageView`          | `img_`            |
-| `Button`             | `btn_`           |
-| `Menu`               | `menu_`             |
-
-Image view example:
-
-```xml
-<ImageView
-    android:id="@+id/img_profile"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
-```
-
-Menu example:
-
-```xml
-<menu>
-	<item
-        android:id="@+id/menu_done"
-        android:title="Done" />
-</menu>
-```
-
-#### 2.3.2.2 Strings
-
-String names start with a prefix that identifies the section they belong to. For example `registration_email_hint` or `registration_name_hint`. If a string __doesn't belong__ to any section, then you should follow the rules below:
-
-
-| Prefix             | Description                           |
-| -----------------  | --------------------------------------|
-| `error_`             | An error message                      |
-| `msg_`               | A regular information message         |
-| `title_`             | A title, i.e. a dialog title          |
-| `action_`            | An action such as "Save" or "Create"  |
 
 
