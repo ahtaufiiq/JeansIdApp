@@ -76,6 +76,8 @@ public class LandingActivity extends AppCompatActivity {
 
     public void login_google(View view) {
         signIn();
+//        Intent i = new Intent(LandingActivity.this,LoginActivity.class);
+//        startActivity(i);
     }
 
     public void signUp(View view) {

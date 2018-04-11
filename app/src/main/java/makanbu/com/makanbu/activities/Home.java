@@ -73,7 +73,7 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (mAuth == null) {
+        if (mAuth.getCurrentUser() == null) {
             Intent i = new Intent(Home.this, LandingActivity.class);
             startActivity(i);
         }

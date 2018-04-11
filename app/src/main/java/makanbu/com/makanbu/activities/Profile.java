@@ -30,27 +30,6 @@ public class Profile extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_profile);
 
-        nama = findViewById(R.id.namaUser);
-        Password = findViewById(R.id.harga_makanan);
-        mAuth = FirebaseAuth.getInstance();
-        String id = mAuth.getUid();
-
-        databaseUser = FirebaseDatabase.getInstance().getReference("Profile").child(id);
-
-        databaseUser.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                User user = dataSnapshot.getValue(User.class);
-                nama.setText(user.getEmail());
-                Password.setText(user.getNomerHandphone());
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
         // Create an instance of the tab layout from the view.
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         // Set the text for each tab.

@@ -33,12 +33,10 @@ public class Berkuah extends Fragment {
         recyclerView = view.findViewById(R.id.recylerView);
         recyclerView.setHasFixedSize(true);
 
-        FirebaseAuth mAuth = FirebaseAuth.getInstance();
-
         listPosts = new ArrayList<>();
 
         listPosts.add(new Makanan(R.drawable.sayurasem,R.drawable.bu_esi,"Sayur Asem","12","10000",4));
-        listPosts.add(new Makanan(R.drawable.ayamgoreng,R.drawable.ibu,"Ayam Goreng","23","20000",5));
+        listPosts.add(new Makanan(R.drawable.ayamgoreng,R.drawable.ibu,"Ayam Goreng","23","20000",2));
         listPosts.add(new Makanan(R.drawable.sayurasem,R.drawable.bu_esi,"Sayur Asem","12","10000",4));
         listPosts.add(new Makanan(R.drawable.ayamgoreng,R.drawable.ibu,"Ayam Goreng","23","20000",5));
 

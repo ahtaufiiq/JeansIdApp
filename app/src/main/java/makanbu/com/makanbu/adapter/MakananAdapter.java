@@ -1,6 +1,7 @@
 package makanbu.com.makanbu.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import makanbu.com.makanbu.R;
+import makanbu.com.makanbu.activities.DetailMenuActivity;
 import makanbu.com.makanbu.model.Makanan;
 
 /**
@@ -22,11 +24,11 @@ import makanbu.com.makanbu.model.Makanan;
  */
 public class MakananAdapter extends RecyclerView.Adapter<MakananAdapter.ViewHolder> {
 
-    Context ceontext;
+    Context context;
     List<Makanan> makananList;
 
-    public MakananAdapter(Context ceontext, List<Makanan> makananList) {
-        this.ceontext = ceontext;
+    public MakananAdapter(Context context, List<Makanan> makananList) {
+        this.context = context;
         this.makananList = makananList;
     }
 
@@ -69,6 +71,14 @@ public class MakananAdapter extends RecyclerView.Adapter<MakananAdapter.ViewHold
         holder.namaMenu_card.setText(makanan.getNamaMenu_card());
         holder.jumlahReview_card.setText(makanan.getJumlahReview_card()+" Review");
         holder.rating_card.setNumStars(makanan.getRating_card());
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(context, DetailMenuActivity.class);
+                context.startActivity(i);
+            }
+        });
 
     }
 
