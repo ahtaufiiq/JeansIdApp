@@ -47,8 +47,6 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
         mBuilder.setContentIntent(resultPendingIntent);
 
 
-
-
         int mNotificationId = (int) System.currentTimeMillis();
 
         NotificationManager mNotifyMgr =

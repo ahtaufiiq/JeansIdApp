@@ -23,7 +23,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import makanbu.com.makanbu.R;
-import makanbu.com.makanbu.homeScreen.Home;
 
 /**
  * Created by SP-SHOCK on 2/21/2018.
@@ -69,7 +68,7 @@ public class LandingActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
-            Intent intent = new Intent(LandingActivity.this,Home.class);
+            Intent intent = new Intent(LandingActivity.this, Home.class);
             startActivity(intent);
         }
 

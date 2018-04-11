@@ -1,9 +1,9 @@
 package makanbu.com.makanbu.activities;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +32,7 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText pass;
     String email, password;
     Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +41,7 @@ public class SignUpActivity extends AppCompatActivity {
         eml = (EditText) findViewById(R.id.et_email);
         pass = (EditText) findViewById(R.id.et_password);
 
-        button= findViewById(R.id.btn_daftar);
+        button = findViewById(R.id.btn_daftar);
         databaseUser = FirebaseDatabase.getInstance().getReference("Profile");
         // [START initialize_auth]
         mAuth = FirebaseAuth.getInstance();
@@ -52,7 +53,7 @@ public class SignUpActivity extends AppCompatActivity {
                 email = eml.getText().toString();
                 password = pass.getText().toString();
 
-                createAccount(email,password);
+                createAccount(email, password);
                 Toast.makeText(SignUpActivity.this, email,
                         Toast.LENGTH_SHORT).show();
 
@@ -62,6 +63,7 @@ public class SignUpActivity extends AppCompatActivity {
         });
 
     }
+
     private void createAccount(final String email, final String password) {
         Log.d(TAG, "createAccount:" + email);
 
@@ -74,7 +76,7 @@ public class SignUpActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             String id = mAuth.getUid();
-                            User user = new User(email,password);
+                            User user = new User(email, password);
                             databaseUser.child(id).setValue(user);
                         } else {
                             // If sign in fails, display a message to the user.

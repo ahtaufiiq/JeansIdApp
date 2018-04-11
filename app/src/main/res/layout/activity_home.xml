@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context="makanbu.com.makanbu.homeScreen.Home">
+    tools:context="makanbu.com.makanbu.activities.Home">
 
     <LinearLayout
         android:layout_width="match_parent"

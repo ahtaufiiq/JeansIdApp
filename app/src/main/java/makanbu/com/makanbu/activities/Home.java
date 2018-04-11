@@ -1,4 +1,4 @@
-package makanbu.com.makanbu.homeScreen;
+package makanbu.com.makanbu.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,15 +12,20 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-import makanbu.com.makanbu.activities.LandingActivity;
 import makanbu.com.makanbu.R;
+import makanbu.com.makanbu.fragmentHome.PagerAdapterHome;
 
 
 public class Home extends AppCompatActivity {
 
-    public static final String table_3 = "User";
+    public static final String table_1 = "User";
+    public static final String table_2 = "Makanan";
+    public static final String table_3 = "Review";
+    public static final String table_4 = "Order";
+
     // [START declare_auth]
     private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,11 +69,12 @@ public class Home extends AppCompatActivity {
         });
 
     }
+
     @Override
     protected void onStart() {
         super.onStart();
-        if (mAuth==null){
-            Intent i = new Intent(Home.this,LandingActivity.class);
+        if (mAuth == null) {
+            Intent i = new Intent(Home.this, LandingActivity.class);
             startActivity(i);
         }
     }
@@ -99,9 +105,10 @@ public class Home extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    public void signOut(){
+
+    public void signOut() {
         mAuth.signOut();
-        Intent i = new Intent(Home.this,LandingActivity.class);
+        Intent i = new Intent(Home.this, LandingActivity.class);
         startActivity(i);
     }
 }

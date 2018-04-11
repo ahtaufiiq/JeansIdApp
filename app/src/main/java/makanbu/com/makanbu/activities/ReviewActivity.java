@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.Window;
 
 import makanbu.com.makanbu.R;
-import makanbu.com.makanbu.profileScreen.Profile;
 
 public class ReviewActivity extends Activity {
 

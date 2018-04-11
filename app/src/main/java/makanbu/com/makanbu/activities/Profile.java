@@ -1,4 +1,4 @@
-package makanbu.com.makanbu.profileScreen;
+package makanbu.com.makanbu.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -15,13 +15,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import makanbu.com.makanbu.R;
+import makanbu.com.makanbu.fragmentProfile.PagerAdapter;
 import makanbu.com.makanbu.model.User;
 
 public class Profile extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     DatabaseReference databaseUser;
-    TextView nama,Password;
+    TextView nama, Password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,8 +31,8 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         nama = findViewById(R.id.namaUser);
-        Password= findViewById(R.id.harga_makanan);
-        mAuth= FirebaseAuth.getInstance();
+        Password = findViewById(R.id.harga_makanan);
+        mAuth = FirebaseAuth.getInstance();
         String id = mAuth.getUid();
 
         databaseUser = FirebaseDatabase.getInstance().getReference("Profile").child(id);
@@ -38,7 +40,7 @@ public class Profile extends AppCompatActivity {
         databaseUser.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                User user= dataSnapshot.getValue(User.class);
+                User user = dataSnapshot.getValue(User.class);
                 nama.setText(user.getEmail());
                 Password.setText(user.getNomerHandphone());
 

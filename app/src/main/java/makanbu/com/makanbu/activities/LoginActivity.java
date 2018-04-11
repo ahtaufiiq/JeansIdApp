@@ -16,7 +16,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import makanbu.com.makanbu.R;
-import makanbu.com.makanbu.homeScreen.Home;
 
 /**
  * Created by SP-SHOCK on 2/21/2018.
@@ -25,7 +24,7 @@ import makanbu.com.makanbu.homeScreen.Home;
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = "EmailPassword";
-    EditText mEmail,mPassword;
+    EditText mEmail, mPassword;
     Button login;
 
     // [START declare_auth]
@@ -38,21 +37,20 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mEmail=findViewById(R.id.user);
-        mPassword=findViewById(R.id.password);
+        mEmail = findViewById(R.id.user);
+        mPassword = findViewById(R.id.password);
         // [START initialize_auth]
         mAuth = FirebaseAuth.getInstance();
         // [END initialize_auth]
 
-        login=findViewById(R.id.lgn_btn);
+        login = findViewById(R.id.lgn_btn);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                signIn(mEmail.getText().toString(),mPassword.getText().toString());
+                signIn(mEmail.getText().toString(), mPassword.getText().toString());
             }
         });
     }
-
 
 
     private void signIn(String email, String password) {

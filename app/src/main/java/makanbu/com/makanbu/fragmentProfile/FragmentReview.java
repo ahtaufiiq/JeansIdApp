@@ -1,4 +1,4 @@
-package makanbu.com.makanbu.homeScreen;
+package makanbu.com.makanbu.fragmentProfile;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,13 +8,17 @@ import android.view.ViewGroup;
 
 import makanbu.com.makanbu.R;
 
+/**
+ * Created by khalidaziaamrina on 16/03/18.
+ */
 
-public class Cemilan extends Fragment {
-
+public class FragmentReview extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cemilan, container, false);
+        return inflater.inflate(R.layout.fragment_review, container, false);
     }
+
+
 }
+

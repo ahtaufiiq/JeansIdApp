@@ -1,17 +1,14 @@
-package makanbu.com.makanbu.profileScreen;
+package makanbu.com.makanbu.fragmentProfile;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import makanbu.com.makanbu.profileScreen.FragmentFood;
-import makanbu.com.makanbu.profileScreen.FragmentReview;
-
 /**
  * Created by khalidaziaamrina on 16/03/18.
  */
 
-public class PagerAdapter  extends FragmentStatePagerAdapter {
+public class PagerAdapter extends FragmentStatePagerAdapter {
     int mNumOfTabs;
 
     public PagerAdapter(FragmentManager fm, int NumOfTabs) {

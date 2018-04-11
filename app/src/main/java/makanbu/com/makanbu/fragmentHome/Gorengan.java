@@ -1,4 +1,4 @@
-package makanbu.com.makanbu.homeScreen;
+package makanbu.com.makanbu.fragmentHome;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

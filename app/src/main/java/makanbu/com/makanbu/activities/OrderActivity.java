@@ -31,12 +31,13 @@ public class OrderActivity extends Activity {
     // [START declare_auth]
     private FirebaseAuth mAuth;
     DatabaseReference databaseOrder;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_order);
-        mAuth= FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
         editTextJumlah = findViewById(R.id.editTextJumlah);
         editTextAlamat = findViewById(R.id.alamatPengiriman);
         editTextCatatan = findViewById(R.id.catatan);
@@ -49,15 +50,15 @@ public class OrderActivity extends Activity {
         alamat = editTextAlamat.getText().toString();
         jumlah = editTextJumlah.getText().toString();
         catatan = editTextCatatan.getText().toString();
-        hargaMakanan=harga.getText().toString();
+        hargaMakanan = harga.getText().toString();
 
         String id = databaseOrder.push().getKey();
-        Order order = new Order(alamat,jumlah,catatan,hargaMakanan);
+        Order order = new Order(alamat, jumlah, catatan, hargaMakanan);
         databaseOrder.child(id).setValue(order);
         Intent intent = new Intent(this, ReviewActivity.class);
-        intent.putExtra("alamat",alamat);
-        intent.putExtra("jumlah",jumlah);
-        intent.putExtra("catatan",catatan);
+        intent.putExtra("alamat", alamat);
+        intent.putExtra("jumlah", jumlah);
+        intent.putExtra("catatan", catatan);
 //        startActivity(intent);
 
     }
