@@ -14,8 +14,8 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="@dimen/margin_32"
-            android:layout_height="@dimen/margin_32"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:src="@drawable/khalida" />
 
         <LinearLayout
