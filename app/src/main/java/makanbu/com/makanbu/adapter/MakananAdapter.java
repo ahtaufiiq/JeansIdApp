@@ -74,8 +74,14 @@ public class MakananAdapter extends RecyclerView.Adapter<MakananAdapter.ViewHold
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 Intent i= new Intent(context, DetailMenuActivity.class);
+                i.putExtra("gambar_card", makanan.getGambar_card());
+                i.putExtra("profileImage_card", makanan.getProfileImage_card());
+                i.putExtra("namaMenu_card", makanan.getNamaMenu_card());
+                i.putExtra("jumlahReview_card", makanan.getJumlahReview_card());
+                i.putExtra("hargaMakanan_card", makanan.getHargaMakanan_card());
+                i.putExtra("rating_card", makanan.getRating_card());
                 context.startActivity(i);
             }
         });
@@ -86,4 +92,5 @@ public class MakananAdapter extends RecyclerView.Adapter<MakananAdapter.ViewHold
     public int getItemCount() {
         return makananList.size();
     }
+
 }
