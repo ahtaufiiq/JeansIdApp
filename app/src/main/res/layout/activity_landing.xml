@@ -1,60 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/margin_24"
+    android:layout_marginRight="@dimen/margin_24"
     tools:context=".activities.LandingActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginBottom="470dp"
-        android:layout_marginTop="45dp">
-
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/makanbulogo"
-            android:layout_marginRight="240dp" />
-
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/close_btn"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_close_black_24dp"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="login"
+        android:text="Log In"
+        android:textColor="#CB202D"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="69dp" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/makanbulogo"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="@dimen/margin_8"
         android:text="Welcome to Makanbu"
-        android:textStyle="bold"
-        android:textSize="24dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginLeft="24dp"
         android:textColor="@color/Red_Dove"
-        />
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <Button
         android:id="@+id/google_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_24"
+        android:background="@drawable/rounded_button"
+        android:onClick="login_google"
+        android:shadowColor="@color/BlackDove"
         android:text="Lanjutkan dengan google"
         android:textColor="@color/White"
-        android:background="@drawable/rounded_button"
-        android:shadowColor="@color/BlackDove"
-        android:onClick="login_google"
-        android:layout_marginTop="150dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginLeft="24dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
         android:id="@+id/regis_btn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
+        android:layout_margin="@dimen/margin_24"
+        android:background="@drawable/rounded_button2"
+        android:onClick="signUp"
+        android:shadowColor="@color/BlackDove"
         android:text="Registrasi"
         android:textColor="@color/Red_Dove"
-        android:background="@drawable/rounded_button2"
-        android:shadowColor="@color/BlackDove"
-        android:onClick="signUp"
-        android:layout_marginTop="224dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginLeft="24dp" />
+        app:layout_constraintTop_toBottomOf="@+id/google_btn" />
 
-</RelativeLayout>
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="24dp" />
+
+</android.support.constraint.ConstraintLayout>

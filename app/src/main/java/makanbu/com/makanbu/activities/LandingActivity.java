@@ -22,7 +22,10 @@ import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import makanbu.com.makanbu.Constants;
 import makanbu.com.makanbu.R;
+import makanbu.com.makanbu.model.SharedPreferences.SharedPref;
+import makanbu.com.makanbu.model.User;
 
 /**
  * Created by SP-SHOCK on 2/21/2018.
@@ -39,12 +42,14 @@ public class LandingActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
 
     private DatabaseReference mUserDatabase;
+    private DatabaseReference databaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing);
 
+        databaseUser = FirebaseDatabase.getInstance().getReference(Constants.table_1);
         // [START config_signin]
         // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -117,7 +122,10 @@ public class LandingActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
+                            String photo= String.valueOf(mAuth.getCurrentUser().getPhotoUrl());
+                            String id = mAuth.getUid();
+                            User post = new User(id, mAuth.getCurrentUser().getEmail(), "+6289634067877", photo);
+                            databaseUser.child(id).setValue(post);
                             Intent intent = new Intent(LandingActivity.this, Home.class);
                             startActivity(intent);
 
@@ -135,6 +143,12 @@ public class LandingActivity extends AppCompatActivity {
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
+
+    public void login(View view) {
+        Intent i = new Intent(LandingActivity.this,LoginActivity.class);
+        startActivity(i);
+
     }
     // [END signin]
 

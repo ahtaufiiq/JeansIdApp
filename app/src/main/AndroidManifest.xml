@@ -9,18 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.LandingActivity">
+        <activity android:name=".activities.LandingActivity"
+            android:theme="@style/NoActionBar">
 
         </activity>
         <activity android:name=".activities.LoginActivity"
-            android:label="@string/title_activity_home" />
+            android:theme="@style/NoActionBar" />
         <activity android:name=".activities.Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.SignUpActivity"/>
+        <activity android:name=".activities.SignUpActivity"
+            android:theme="@style/NoActionBar"/>
         <activity android:name=".activities.OrderActivity"/>
         <activity android:name=".activities.DetailMenuActivity"/>
         <activity android:name=".activities.ReviewActivity" />

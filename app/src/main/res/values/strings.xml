@@ -10,4 +10,6 @@
     <string name="menus">menus</string>
     <string name="search">search</string>
     <string name="imageslider">imageslider</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

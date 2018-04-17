@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.DetailMenuActivity">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_marginLeft="22dp"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginLeft="22dp">
 
-            <ImageView
-                android:id="@+id/img_masakan"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_marginTop="35dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/ikanbakar" />
+        <ImageView
+            android:id="@+id/img_masakan"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="35dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ikanbakar" />
+
         <TextView
             android:id="@+id/tv_nama_makanan"
             android:layout_width="wrap_content"
@@ -54,7 +53,8 @@
             android:layout_marginTop="3dp"
             android:text="Sate" />
 
-        <ImageView
+
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_avatar_penjual"
             android:layout_width="32dp"
             android:layout_height="32dp"
@@ -62,7 +62,7 @@
             android:layout_alignStart="@+id/tv_kategori_makanan"
             android:layout_below="@+id/tv_kategori_makanan"
             android:layout_marginTop="5dp"
-            android:src="@drawable/ibu"/>
+            android:src="@drawable/ibu" />
 
         <TextView
             android:id="@+id/tv_nama_penjual"
@@ -210,24 +210,22 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/tv_lihat_semua"
-            android:layout_marginTop="5dp">
-        </android.support.v7.widget.RecyclerView>
+            android:layout_marginTop="5dp"></android.support.v7.widget.RecyclerView>
 
         <Button
             android:id="@+id/btn_order"
-            android:layout_below="@+id/rv_product"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="22dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:layout_below="@+id/rv_product"
+            android:layout_marginRight="22dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/rounded_button"
             android:elevation="8dp"
             android:onClick="order"
             android:text="Order"
             android:textColor="#F9F9F9"
-            android:textSize="20sp"
-          />
+            android:textSize="20sp" />
 
 
     </RelativeLayout>

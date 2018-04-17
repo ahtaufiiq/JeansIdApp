@@ -37,7 +37,9 @@ public class OrderActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_order);
+
         mAuth = FirebaseAuth.getInstance();
+
         editTextJumlah = findViewById(R.id.editTextJumlah);
         editTextAlamat = findViewById(R.id.alamatPengiriman);
         editTextCatatan = findViewById(R.id.catatan);
@@ -55,11 +57,11 @@ public class OrderActivity extends Activity {
         String id = databaseOrder.push().getKey();
         Order order = new Order(alamat, jumlah, catatan, hargaMakanan);
         databaseOrder.child(id).setValue(order);
-        Intent intent = new Intent(this, ReviewActivity.class);
+        Intent intent = new Intent(this, Home.class);
         intent.putExtra("alamat", alamat);
         intent.putExtra("jumlah", jumlah);
         intent.putExtra("catatan", catatan);
-//        startActivity(intent);
+        startActivity(intent);
 
     }
 }

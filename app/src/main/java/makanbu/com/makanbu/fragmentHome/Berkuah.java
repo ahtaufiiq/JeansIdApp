@@ -5,11 +5,18 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
@@ -24,6 +31,10 @@ public class Berkuah extends Fragment {
     private RecyclerView.Adapter adapter;
 
     private ArrayList<Makanan> listPosts;
+    private FirebaseFirestore firebaseFirestore;
+
+    public Berkuah() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,19 +43,48 @@ public class Berkuah extends Fragment {
 
         recyclerView = view.findViewById(R.id.recylerView);
         recyclerView.setHasFixedSize(true);
-
+        firebaseFirestore= FirebaseFirestore.getInstance();
         listPosts = new ArrayList<>();
 
-        listPosts.add(new Makanan(R.drawable.sayurasem,R.drawable.bu_esi,"Sayur Asem","12","10000",4));
-        listPosts.add(new Makanan(R.drawable.ayamgoreng,R.drawable.ibu,"Ayam Goreng","23","20000",2));
-        listPosts.add(new Makanan(R.drawable.sayurasem,R.drawable.bu_esi,"Sayur Asem","12","10000",4));
-        listPosts.add(new Makanan(R.drawable.ayamgoreng,R.drawable.ibu,"Ayam Goreng","23","20000",5));
-
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        adapter = new MakananAdapter(getContext(), listPosts);
 
-        MakananAdapter postList = new MakananAdapter(getContext(), listPosts);
-
-        recyclerView.setAdapter(postList);
+        recyclerView.setAdapter(adapter);
+        getProduct();
         return view;
+    }
+
+    private void getProduct() {
+        Query firstQuery = FirebaseFirestore.getInstance().collection("Makanan").orderBy("timestamp", Query.Direction.DESCENDING);
+        firstQuery.addSnapshotListener(getActivity(), new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
+                Log.d("Testing", "onEvent: "+e);
+
+                if (!documentSnapshots.isEmpty()) {
+
+                    for (DocumentChange doc : documentSnapshots.getDocumentChanges()) {
+
+                        if (doc.getType() == DocumentChange.Type.ADDED) {
+
+                            String productId = doc.getDocument().getId();
+                            Makanan product = doc.getDocument().toObject(Makanan.class);
+
+                            listPosts.add(product);
+
+                        }
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+
+            }
+
+        });
+
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
     }
 }

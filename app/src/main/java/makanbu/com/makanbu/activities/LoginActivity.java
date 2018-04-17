@@ -3,6 +3,8 @@ package makanbu.com.makanbu.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +17,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import makanbu.com.makanbu.Constants;
 import makanbu.com.makanbu.R;
+import makanbu.com.makanbu.model.SharedPreferences.SharedPref;
 
 /**
  * Created by SP-SHOCK on 2/21/2018.
@@ -24,7 +28,8 @@ import makanbu.com.makanbu.R;
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = "EmailPassword";
-    EditText mEmail, mPassword;
+    TextInputLayout mEmail;
+    TextInputLayout mPassword;
     Button login;
 
     // [START declare_auth]
@@ -47,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                signIn(mEmail.getText().toString(), mPassword.getText().toString());
+                signIn(mEmail.getEditText().getText().toString(), mPassword.getEditText().getText().toString());
             }
         });
     }
@@ -62,8 +67,6 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-
-                            FirebaseUser user = mAuth.getCurrentUser();
                             Intent intent = new Intent(LoginActivity.this, Home.class);
                             startActivity(intent);
                         } else {

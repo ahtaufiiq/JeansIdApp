@@ -23,23 +23,21 @@ public class Profile extends AppCompatActivity {
     FirebaseAuth mAuth;
     DatabaseReference databaseUser;
     TextView nama, Password;
-
+    TabLayout tabLayout;
+    ViewPager viewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_profile);
 
-        // Create an instance of the tab layout from the view.
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        // Set the text for each tab.
-        tabLayout.addTab(tabLayout.newTab().setText("Foods"));
-        tabLayout.addTab(tabLayout.newTab().setText("Review"));
-        // Set the tabs to fill the entire layout.
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        createTabLayout();
+        createViewPager();
 
+    }
 
-        final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+    private void createViewPager() {
+        viewPager =findViewById(R.id.pager);
         final PagerAdapter adapter = new PagerAdapter
                 (getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
@@ -62,5 +60,15 @@ public class Profile extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void createTabLayout() {
+        // Create an instance of the tab layout from the view.
+        tabLayout =  findViewById(R.id.tab_layout);
+        // Set the text for each tab.
+        tabLayout.addTab(tabLayout.newTab().setText("Foods"));
+        tabLayout.addTab(tabLayout.newTab().setText("Review"));
+        // Set the tabs to fill the entire layout.
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
     }
 }
