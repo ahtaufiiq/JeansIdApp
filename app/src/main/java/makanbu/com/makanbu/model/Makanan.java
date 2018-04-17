@@ -22,6 +22,7 @@ public class Makanan implements Parcelable {
         this.rating_card = rating_card;
     }
 
+
     public String getPhone_number() {
         return phone_number;
     }
