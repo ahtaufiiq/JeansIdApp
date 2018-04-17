@@ -2,6 +2,7 @@ package makanbu.com.makanbu.fragmentHome;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -30,6 +31,7 @@ public class Berkuah extends Fragment {
 
     private ArrayList<Makanan> listPosts;
     private FirebaseFirestore firebaseFirestore;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     public Berkuah() {
     }
@@ -43,6 +45,16 @@ public class Berkuah extends Fragment {
         recyclerView.setHasFixedSize(true);
         firebaseFirestore = FirebaseFirestore.getInstance();
         listPosts = new ArrayList<>();
+
+        swipeRefreshLayout = view.findViewById(R.id.swipeRefresh);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                listPosts.clear();
+                getProduct();
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new MakananAdapter(getContext(), listPosts);

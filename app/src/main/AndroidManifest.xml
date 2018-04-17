@@ -24,7 +24,8 @@
         <activity android:name=".activities.SignUpActivity"
             android:theme="@style/NoActionBar"/>
         <activity android:name=".activities.OrderActivity"/>
-        <activity android:name=".activities.DetailMenuActivity"/>
+        <activity android:name=".activities.DetailMenuActivity"
+            android:theme="@style/NoActionBar"/>
         <activity android:name=".activities.ReviewActivity" />
         <activity android:name=".activities.Profile">
 

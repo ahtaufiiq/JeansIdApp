@@ -53,6 +53,8 @@ public class OrderActivity extends Activity {
     // [START declare_auth]
     private FirebaseAuth mAuth;
     DatabaseReference databaseOrder;
+    private TextView textView4;
+    private TextView textView3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +70,17 @@ public class OrderActivity extends Activity {
         editTextAlamat = findViewById(R.id.alamatPengiriman);
         editTextCatatan = findViewById(R.id.catatan);
         harga = findViewById(R.id.harga_makanan);
+        textView3 = findViewById(R.id.textView3);
 
+        textView4 = findViewById(R.id.textView4);
+        editTextJumlah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int harga= Integer.parseInt(hargaMakanan);
+                total= harga*Integer.parseInt(editTextJumlah.getText().toString());
+               textView4.setText("Rp "+total);
+            }
+        });
         imageView=findViewById(R.id.img_masakan);
         mNamaMakanan=findViewById(R.id.namaMakanan);
         circleImageView= findViewById(R.id.avatar);
@@ -92,6 +104,8 @@ public class OrderActivity extends Activity {
         mNamaMakanan.setText(namaMenu);
         mJumlahReview.setText(jumlahReview);
         harga.setText(hargaMakanan);
+        textView3.setText("Rp "+hargaMakanan);
+        textView4.setText("Rp "+hargaMakanan);
     }
 
     public void order(View view) {
@@ -121,6 +135,7 @@ public class OrderActivity extends Activity {
     public void sendToWhatsapp() {
         String nomor=number;
         String text ="Beli "+ namaMenu+" Sebanyak " + jumlah+
+                "\n Totalnya Rp "+ total+
                 "\n Masih ada gk mas"+
                 "\n ke "+ alamat;
 

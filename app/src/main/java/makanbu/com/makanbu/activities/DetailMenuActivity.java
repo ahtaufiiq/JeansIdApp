@@ -34,7 +34,6 @@ public class DetailMenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_menu);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         if (getIntent() != null) {
             getData();
@@ -58,9 +57,9 @@ public class DetailMenuActivity extends AppCompatActivity {
                 .load(profile)
                 .into(profileImage_card);
         namaMenu_card.setText(namaMenu);
-        jumlahReview_card.setText(jumlahReview);
+        jumlahReview_card.setText(jumlahReview+" Reviews");
         hargaMakanan_card.setText(hargaMakanan);
-        rating_card.setStepSize(rating);
+        rating_card.setNumStars(rating);
     }
 
     public void getData() {
