@@ -29,6 +29,7 @@ public class DetailMenuActivity extends AppCompatActivity {
     String namaMenu, jumlahReview, hargaMakanan;
     int rating;
 
+    Makanan makanan;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,18 +64,18 @@ public class DetailMenuActivity extends AppCompatActivity {
     }
 
     public void getData() {
-        Makanan makanan = getIntent().getExtras().getParcelable(Constants.KEY_MAKANAN);
+        makanan= getIntent().getExtras().getParcelable(Constants.KEY_MAKANAN);
         gambar = makanan.getGambar_card();
         profile = makanan.getProfileImage_card();
         hargaMakanan = makanan.getHargaMakanan_card();
         namaMenu = makanan.getNamaMenu_card();
         jumlahReview = makanan.getJumlahReview_card();
         rating = makanan.getRating_card();
-
     }
 
     public void order(View view) {
         Intent intent = new Intent(this, OrderActivity.class);
+        intent.putExtra(Constants.KEY_MAKANAN,makanan);
         startActivity(intent);
     }
 }

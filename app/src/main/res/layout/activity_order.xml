@@ -50,11 +50,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_20">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/avatar"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@drawable/bu_esi" />
+                android:src="@drawable/bu_esi"  />
 
             <TextView
                 android:id="@+id/namaMakanan"

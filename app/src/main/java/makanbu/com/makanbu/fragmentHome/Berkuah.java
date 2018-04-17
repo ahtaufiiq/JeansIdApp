@@ -53,7 +53,7 @@ public class Berkuah extends Fragment {
     }
 
     private void getProduct() {
-        Query firstQuery = FirebaseFirestore.getInstance().collection("Makanan").orderBy("timestamp", Query.Direction.DESCENDING);
+        Query firstQuery = FirebaseFirestore.getInstance().collection("Makanan").whereEqualTo("category","berkuah").orderBy("timestamp", Query.Direction.DESCENDING);
         firstQuery.addSnapshotListener(getActivity(), new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
