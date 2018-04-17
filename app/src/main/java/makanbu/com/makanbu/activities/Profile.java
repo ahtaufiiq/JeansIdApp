@@ -8,15 +8,10 @@ import android.view.Window;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import makanbu.com.makanbu.R;
 import makanbu.com.makanbu.fragmentProfile.PagerAdapter;
-import makanbu.com.makanbu.model.User;
 
 public class Profile extends AppCompatActivity {
 
@@ -25,6 +20,7 @@ public class Profile extends AppCompatActivity {
     TextView nama, Password;
     TabLayout tabLayout;
     ViewPager viewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +33,7 @@ public class Profile extends AppCompatActivity {
     }
 
     private void createViewPager() {
-        viewPager =findViewById(R.id.pager);
+        viewPager = findViewById(R.id.pager);
         final PagerAdapter adapter = new PagerAdapter
                 (getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
@@ -64,7 +60,7 @@ public class Profile extends AppCompatActivity {
 
     private void createTabLayout() {
         // Create an instance of the tab layout from the view.
-        tabLayout =  findViewById(R.id.tab_layout);
+        tabLayout = findViewById(R.id.tab_layout);
         // Set the text for each tab.
         tabLayout.addTab(tabLayout.newTab().setText("Foods"));
         tabLayout.addTab(tabLayout.newTab().setText("Review"));

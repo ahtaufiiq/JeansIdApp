@@ -9,12 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RatingBar;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import makanbu.com.makanbu.Constants;
@@ -75,19 +73,14 @@ public class MakananAdapter extends RecyclerView.Adapter<MakananAdapter.ViewHold
                 .into(holder.profileImage_card);
         holder.hargaMakanan_card.setText(makanan.getHargaMakanan_card());
         holder.namaMenu_card.setText(makanan.getNamaMenu_card());
-        holder.jumlahReview_card.setText(makanan.getJumlahReview_card()+" Review");
+        holder.jumlahReview_card.setText(makanan.getJumlahReview_card() + " Review");
         holder.rating_card.setNumStars(makanan.getRating_card());
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(context, DetailMenuActivity.class);
-                i.putExtra(Constants.KEY_IMAGE_FOOD,makanan.getGambar_card());
-                i.putExtra(Constants.KEY_PROFILE_IMAGE,makanan.getProfileImage_card());
-                i.putExtra(Constants.KEY_PRICE_FOOD,makanan.getHargaMakanan_card());
-                i.putExtra(Constants.KEY_NAME_FOOD,makanan.getNamaMenu_card());
-                i.putExtra(Constants.KEY_TOTAL_REVIEW,makanan.getJumlahReview_card());
-                i.putExtra(Constants.KEY_RATING_FOOD,makanan.getRating_card());
+                Intent i = new Intent(context, DetailMenuActivity.class);
+                i.putExtra(Constants.KEY_MAKANAN, makanan);
                 context.startActivity(i);
             }
         });

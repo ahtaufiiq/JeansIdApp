@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -41,7 +40,7 @@ public class SignUpActivity extends AppCompatActivity {
     private static final String TAG = "EmailPassword";
     DatabaseReference databaseUser;
     private EditText eml;
-    private EditText pass,mPhone;
+    private EditText pass, mPhone;
     String email, password;
     Button button;
     private Uri imageUri;
@@ -56,8 +55,8 @@ public class SignUpActivity extends AppCompatActivity {
 
         eml = (EditText) findViewById(R.id.et_email);
         pass = (EditText) findViewById(R.id.et_password);
-        mPhone= findViewById(R.id.et_nomor);
-        imageView= findViewById(R.id.setup_image);
+        mPhone = findViewById(R.id.et_nomor);
+        imageView = findViewById(R.id.setup_image);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

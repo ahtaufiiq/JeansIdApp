@@ -24,7 +24,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import makanbu.com.makanbu.Constants;
 import makanbu.com.makanbu.R;
-import makanbu.com.makanbu.model.SharedPreferences.SharedPref;
 import makanbu.com.makanbu.model.User;
 
 /**
@@ -122,7 +121,7 @@ public class LandingActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
-                            String photo= String.valueOf(mAuth.getCurrentUser().getPhotoUrl());
+                            String photo = String.valueOf(mAuth.getCurrentUser().getPhotoUrl());
                             String id = mAuth.getUid();
                             User post = new User(id, mAuth.getCurrentUser().getEmail(), "+6289634067877", photo);
                             databaseUser.child(id).setValue(post);
@@ -146,7 +145,7 @@ public class LandingActivity extends AppCompatActivity {
     }
 
     public void login(View view) {
-        Intent i = new Intent(LandingActivity.this,LoginActivity.class);
+        Intent i = new Intent(LandingActivity.this, LoginActivity.class);
         startActivity(i);
 
     }

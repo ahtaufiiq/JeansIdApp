@@ -3,10 +3,10 @@ package makanbu.com.makanbu.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Makanan  {
+public class Makanan implements Parcelable {
 
     private String gambar_card, profileImage_card;
-    private String namaMenu_card, jumlahReview_card, hargaMakanan_card,phone_number;
+    private String namaMenu_card, jumlahReview_card, hargaMakanan_card, phone_number;
     private int rating_card;
 
     public Makanan() {
@@ -50,40 +50,42 @@ public class Makanan  {
         return rating_card;
     }
 
-//
-//    @Override
-//    public int describeContents() {
-//        return 0;
-//    }
-//
-//    @Override
-//    public void writeToParcel(Parcel dest, int flags) {
-//        dest.writeInt(this.gambar_card);
-//        dest.writeInt(this.profileImage_card);
-//        dest.writeString(this.namaMenu_card);
-//        dest.writeString(this.jumlahReview_card);
-//        dest.writeString(this.hargaMakanan_card);
-//        dest.writeInt(this.rating_card);
-//    }
-//
-//    protected Makanan(Parcel in) {
-//        this.gambar_card = in.readInt();
-//        this.profileImage_card = in.readInt();
-//        this.namaMenu_card = in.readString();
-//        this.jumlahReview_card = in.readString();
-//        this.hargaMakanan_card = in.readString();
-//        this.rating_card = in.readInt();
-//    }
-//
-//    public static final Parcelable.Creator<Makanan> CREATOR = new Parcelable.Creator<Makanan>() {
-//        @Override
-//        public Makanan createFromParcel(Parcel source) {
-//            return new Makanan(source);
-//        }
-//
-//        @Override
-//        public Makanan[] newArray(int size) {
-//            return new Makanan[size];
-//        }
-//    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.gambar_card);
+        dest.writeString(this.profileImage_card);
+        dest.writeString(this.namaMenu_card);
+        dest.writeString(this.jumlahReview_card);
+        dest.writeString(this.hargaMakanan_card);
+        dest.writeString(this.phone_number);
+        dest.writeInt(this.rating_card);
+    }
+
+    protected Makanan(Parcel in) {
+        this.gambar_card = in.readString();
+        this.profileImage_card = in.readString();
+        this.namaMenu_card = in.readString();
+        this.jumlahReview_card = in.readString();
+        this.hargaMakanan_card = in.readString();
+        this.phone_number = in.readString();
+        this.rating_card = in.readInt();
+    }
+
+    public static final Parcelable.Creator<Makanan> CREATOR = new Parcelable.Creator<Makanan>() {
+        @Override
+        public Makanan createFromParcel(Parcel source) {
+            return new Makanan(source);
+        }
+
+        @Override
+        public Makanan[] newArray(int size) {
+            return new Makanan[size];
+        }
+    };
 }

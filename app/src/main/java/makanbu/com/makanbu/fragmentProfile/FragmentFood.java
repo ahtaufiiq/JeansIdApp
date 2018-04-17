@@ -23,6 +23,7 @@ public class FragmentFood extends Fragment {
     private RecyclerView.Adapter adapter;
 
     private ArrayList<Makanan> listPosts;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -32,11 +33,6 @@ public class FragmentFood extends Fragment {
         recyclerView.setHasFixedSize(true);
 
         listPosts = new ArrayList<>();
-
-        listPosts.add(new Makanan(R.drawable.ikanbakar,R.drawable.bu_esi,"Ikan Bakar","12","20000",4));
-        listPosts.add(new Makanan(R.drawable.ayamgoreng,R.drawable.ibu,"Ayam Goreng","23","20000",2));
-        listPosts.add(new Makanan(R.drawable.ikanbakar,R.drawable.bu_esi,"Ikan Bakar","12","20000",4));
-        listPosts.add(new Makanan(R.drawable.ayamgoreng,R.drawable.ibu,"Ayam Goreng","23","20000",5));
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 

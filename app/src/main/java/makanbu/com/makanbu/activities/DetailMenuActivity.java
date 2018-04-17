@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide;
 import de.hdodenhof.circleimageview.CircleImageView;
 import makanbu.com.makanbu.Constants;
 import makanbu.com.makanbu.R;
+import makanbu.com.makanbu.model.Makanan;
 
 /**
  * Created by Labbaika Putri on 2/21/2018.
@@ -34,7 +35,7 @@ public class DetailMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_menu);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        if (getIntent()!=null) {
+        if (getIntent() != null) {
             getData();
             setData();
         }
@@ -61,16 +62,17 @@ public class DetailMenuActivity extends AppCompatActivity {
         rating_card.setStepSize(rating);
     }
 
-    public void getData(){
-        Intent intent = getIntent();
-        gambar = intent.getStringExtra(Constants.KEY_IMAGE_FOOD);
-        profile = intent.getStringExtra(Constants.KEY_PROFILE_IMAGE);
-        hargaMakanan = intent.getStringExtra(Constants.KEY_PRICE_FOOD);
-        namaMenu = intent.getStringExtra(Constants.KEY_NAME_FOOD);
-        jumlahReview = intent.getStringExtra(Constants.KEY_TOTAL_REVIEW);
-        rating = intent.getIntExtra(Constants.KEY_RATING_FOOD,0);
+    public void getData() {
+        Makanan makanan = getIntent().getExtras().getParcelable(Constants.KEY_MAKANAN);
+        gambar = makanan.getGambar_card();
+        profile = makanan.getProfileImage_card();
+        hargaMakanan = makanan.getHargaMakanan_card();
+        namaMenu = makanan.getNamaMenu_card();
+        jumlahReview = makanan.getJumlahReview_card();
+        rating = makanan.getRating_card();
 
     }
+
     public void order(View view) {
         Intent intent = new Intent(this, OrderActivity.class);
         startActivity(intent);

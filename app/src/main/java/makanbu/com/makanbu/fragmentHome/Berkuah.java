@@ -2,7 +2,6 @@ package makanbu.com.makanbu.fragmentHome;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -10,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -43,7 +41,7 @@ public class Berkuah extends Fragment {
 
         recyclerView = view.findViewById(R.id.recylerView);
         recyclerView.setHasFixedSize(true);
-        firebaseFirestore= FirebaseFirestore.getInstance();
+        firebaseFirestore = FirebaseFirestore.getInstance();
         listPosts = new ArrayList<>();
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -59,7 +57,7 @@ public class Berkuah extends Fragment {
         firstQuery.addSnapshotListener(getActivity(), new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
-                Log.d("Testing", "onEvent: "+e);
+                Log.d("Testing", "onEvent: " + e);
 
                 if (!documentSnapshots.isEmpty()) {
 

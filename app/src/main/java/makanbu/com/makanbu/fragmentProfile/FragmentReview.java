@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import makanbu.com.makanbu.R;
-import makanbu.com.makanbu.adapter.MakananAdapter;
 import makanbu.com.makanbu.adapter.ReviewAdapter;
 import makanbu.com.makanbu.model.Makanan;
 
@@ -24,6 +23,7 @@ public class FragmentReview extends Fragment {
     private RecyclerView.Adapter adapter;
 
     private ArrayList<Makanan> listPosts;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -34,14 +34,9 @@ public class FragmentReview extends Fragment {
 
         listPosts = new ArrayList<>();
 
-        listPosts.add(new Makanan(R.drawable.ikanbakar,R.drawable.bu_esi,"Ikan Bakar","12","20000",4));
-        listPosts.add(new Makanan(R.drawable.ayamgoreng,R.drawable.ibu,"Ayam Goreng","23","20000",2));
-        listPosts.add(new Makanan(R.drawable.ikanbakar,R.drawable.bu_esi,"Ikan Bakar","12","20000",4));
-        listPosts.add(new Makanan(R.drawable.ayamgoreng,R.drawable.ibu,"Ayam Goreng","23","20000",5));
-
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        ReviewAdapter postList = new ReviewAdapter (getContext(), listPosts);
+        ReviewAdapter postList = new ReviewAdapter(getContext(), listPosts);
 
         recyclerView.setAdapter(postList);
         return view;
