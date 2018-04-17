@@ -21,6 +21,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.net.URISyntaxException;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 import makanbu.com.makanbu.Constants;
 import makanbu.com.makanbu.R;
@@ -36,25 +39,32 @@ public class OrderActivity extends Activity {
     private static final String TAG="Get Intent";
     private List<ApplicationInfo> m_appList;
     public static final String PACKAGE_NAME_WA = "com.whatsapp";
-    EditText editTextAlamat, editTextJumlah, editTextCatatan;
-    TextView harga;
-    String alamat;
-    String jumlah;
-    String catatan;
-    String number;
-    int total;
-    String gambar, profile;
-    String namaMenu, jumlahReview, hargaMakanan;
-    int rating;
+    String alamat,jumlah,catatan,number,gambar, profile,namaMenu, jumlahReview, hargaMakanan;
+    int rating,total;
 
-    ImageView imageView;
-    TextView mNamaMakanan,mHargaMakanan,mJumlahReview;
-    CircleImageView circleImageView;
-    // [START declare_auth]
-    private FirebaseAuth mAuth;
+    @BindView(R.id.et_alamat) EditText mAlamat;
+
+    @BindView(R.id.et_catatan) EditText mCatatan;
+
+    @BindView(R.id.tv_harga_satuan) TextView mHargaSatuan;
+
+    @BindView(R.id.tv_harga_makanan) TextView mHargaMakanan;
+
+    @BindView(R.id.img_masakan) ImageView imageView;
+
+    @BindView(R.id.tv_nama_makanan) TextView mNamaMakanan;
+
+    @BindView(R.id.tv_jumlah_review) TextView mJumlahReview;
+
+    @BindView(R.id.img_avatar) CircleImageView circleImageView;
+
+    @BindView(R.id.tv_total_harga) TextView mTotalHarga;
+
+    EditText mJumlahOrder;
+
     DatabaseReference databaseOrder;
-    private TextView textView4;
-    private TextView textView3;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,63 +72,24 @@ public class OrderActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_order);
 
-        mAuth = FirebaseAuth.getInstance();
+        ButterKnife.bind(this);
 
+        databaseOrder = FirebaseDatabase.getInstance().getReference("Order");
 
-
-        editTextJumlah = findViewById(R.id.editTextJumlah);
-        editTextAlamat = findViewById(R.id.alamatPengiriman);
-        editTextCatatan = findViewById(R.id.catatan);
-        harga = findViewById(R.id.harga_makanan);
-        textView3 = findViewById(R.id.textView3);
-
-        textView4 = findViewById(R.id.textView4);
-        editTextJumlah.setOnClickListener(new View.OnClickListener() {
+        mJumlahOrder= findViewById(R.id.et_jumlah_order);
+        mJumlahOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int harga= Integer.parseInt(hargaMakanan);
-                total= harga*Integer.parseInt(editTextJumlah.getText().toString());
-               textView4.setText("Rp "+total);
+                total= harga*Integer.parseInt(mJumlahOrder.getText().toString());
+               mTotalHarga.setText("Rp "+total);
             }
         });
-        imageView=findViewById(R.id.img_masakan);
-        mNamaMakanan=findViewById(R.id.namaMakanan);
-        circleImageView= findViewById(R.id.avatar);
-        mJumlahReview= findViewById(R.id.jumlahReview);
 
         if (getIntent() != null){
             getData();
             setData();
         }
-        databaseOrder = FirebaseDatabase.getInstance().getReference("Order");
-    }
-
-    private void setData() {
-        Glide.with(OrderActivity.this)
-                .load(gambar)
-                .into(imageView);
-
-        Glide.with(OrderActivity.this)
-                .load(profile)
-                .into(circleImageView);
-        mNamaMakanan.setText(namaMenu);
-        mJumlahReview.setText(jumlahReview);
-        harga.setText(hargaMakanan);
-        textView3.setText("Rp "+hargaMakanan);
-        textView4.setText("Rp "+hargaMakanan);
-    }
-
-    public void order(View view) {
-        alamat = editTextAlamat.getText().toString();
-        jumlah = editTextJumlah.getText().toString();
-        catatan = editTextCatatan.getText().toString();
-        hargaMakanan = harga.getText().toString();
-
-        String id = databaseOrder.push().getKey();
-        Order order = new Order(alamat, jumlah, catatan, hargaMakanan);
-        databaseOrder.child(id).setValue(order);
-        sendToWhatsapp();
-
     }
 
     public void getData() {
@@ -130,6 +101,33 @@ public class OrderActivity extends Activity {
         jumlahReview = makanan.getJumlahReview_card();
         rating = makanan.getRating_card();
         number = makanan.getPhone_number();
+    }
+
+    private void setData() {
+        Glide.with(OrderActivity.this)
+                .load(gambar)
+                .into(imageView);
+        Glide.with(OrderActivity.this)
+                .load(profile)
+                .into(circleImageView);
+        mNamaMakanan.setText(namaMenu);
+        mJumlahReview.setText(jumlahReview);
+        mHargaMakanan.setText(hargaMakanan);
+        mHargaSatuan.setText("Rp "+hargaMakanan);
+        mTotalHarga.setText("Rp "+hargaMakanan);
+    }
+
+    public void order(View view) {
+        alamat = mAlamat.getText().toString();
+        jumlah = mJumlahOrder.getText().toString();
+        catatan = mCatatan.getText().toString();
+        hargaMakanan = mHargaSatuan.getText().toString();
+
+        String id = databaseOrder.push().getKey();
+        Order order = new Order(alamat, jumlah, catatan, hargaMakanan);
+        databaseOrder.child(id).setValue(order);
+        sendToWhatsapp();
+
     }
 
     public void sendToWhatsapp() {
