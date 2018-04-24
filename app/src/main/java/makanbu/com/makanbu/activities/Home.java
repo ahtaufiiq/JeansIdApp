@@ -10,11 +10,14 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageListener;
 
 import makanbu.com.makanbu.R;
 import makanbu.com.makanbu.fragmentHome.PagerAdapterHome;
@@ -24,6 +27,9 @@ public class Home extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
+
+    CarouselView carouselView;
+    int[] imgs = {R.drawable.ayamgoreng, R.drawable.asampedas1, R.drawable.putu, R.drawable.gurame, R.drawable.sop};
 
     // [START declare_auth]
     private FirebaseAuth mAuth;
@@ -51,6 +57,10 @@ public class Home extends AppCompatActivity {
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        carouselView = findViewById(R.id.aaa);
+        carouselView.setPageCount(imgs.length);
+        carouselView.setImageListener(imageListener);
     }
 
     public void createTabLayout() {
@@ -95,6 +105,13 @@ public class Home extends AppCompatActivity {
             }
         });
     }
+
+    ImageListener imageListener = new ImageListener() {
+        @Override
+        public void setImageForPosition(int position, ImageView imageView) {
+            imageView.setImageResource(imgs[position]);
+        }
+    };
 
     @Override
     protected void onStart() {
