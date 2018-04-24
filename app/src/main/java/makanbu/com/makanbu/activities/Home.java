@@ -53,6 +53,10 @@ public class Home extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("Cemilan"));
         // Set the tabs to fill the entire layout.
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+        tabLayout.getTabAt(0).setIcon(R.drawable.kuah);
+        tabLayout.getTabAt(1).setIcon(R.drawable.goreng);
+        tabLayout.getTabAt(2).setIcon(R.drawable.cemil);
     }
 
     public void createViewPager() {
