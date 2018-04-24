@@ -130,13 +130,13 @@ public class Home extends AppCompatActivity {
         }
 
         switch (item.getItemId()) {
-            case R.id.menu:
-                Toast.makeText(this, "Ini menunya", Toast.LENGTH_SHORT).show();
+            case R.id.search:
+                Toast.makeText(this, "Ini pencarian", Toast.LENGTH_SHORT).show();
                 return true;
 
-            case R.id.search:
+            case R.id.notif:
                 signOut();
-                Toast.makeText(this, "Ini pencarian", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Ini notif", Toast.LENGTH_SHORT).show();
                 return true;
         }
 

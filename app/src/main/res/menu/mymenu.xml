@@ -10,8 +10,8 @@
         android:icon="@drawable/ic_search" />
 
     <item
-        android:id="@+id/menu"
-        android:title="Menu"
+        android:id="@+id/notif"
+        android:title="Notification"
         app:showAsAction="always"
-        android:icon="@drawable/ic_subject"/>
+        android:icon="@drawable/notif"/>
 </menu>
