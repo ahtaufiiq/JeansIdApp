@@ -13,26 +13,25 @@
         <ImageView
             android:id="@+id/img_masakan"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:layout_marginTop="35dp"
+            android:layout_height="224dp"
             android:scaleType="fitXY"
             android:src="@drawable/ikanbakar" />
 
         <TextView
             android:id="@+id/tv_nama_makanan"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/img_masakan"
             android:layout_marginTop="24dp"
             android:text="Ikan Bakar Bu Esi"
             android:textColor="@color/BlackDove"
-            android:textSize="22dp"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_harga_makanan"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/tv_nama_makanan"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
@@ -40,13 +39,13 @@
             android:layout_marginRight="20dp"
             android:text="Rp 32.000"
             android:textColor="@color/colorPrimary"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_kategori_makanan"
             android:layout_width="wrap_content"
-            android:layout_height="20dp"
+            android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/tv_nama_makanan"
             android:layout_alignStart="@+id/tv_nama_makanan"
             android:layout_below="@+id/tv_nama_makanan"
@@ -67,7 +66,7 @@
         <TextView
             android:id="@+id/tv_nama_penjual"
             android:layout_width="wrap_content"
-            android:layout_height="15dp"
+            android:layout_height="wrap_content"
             android:layout_alignTop="@+id/img_avatar_penjual"
             android:layout_marginLeft="13dp"
             android:layout_marginStart="13dp"
@@ -76,15 +75,6 @@
             android:text="Bu Esi"
             android:textColor="@color/BlackDove"
             android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tv_job_penjual"
-            android:layout_width="wrap_content"
-            android:layout_height="15dp"
-            android:layout_alignBottom="@+id/img_avatar_penjual"
-            android:layout_alignLeft="@+id/tv_nama_penjual"
-            android:layout_alignStart="@+id/tv_nama_penjual"
-            android:text="Guru TK Bhayangkara" />
 
         <View
             android:id="@+id/view"
@@ -98,24 +88,22 @@
             android:id="@+id/reviewHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/img_avatar_penjual"
-            android:layout_alignStart="@+id/img_avatar_penjual"
             android:layout_below="@+id/view"
             android:layout_marginTop="5dp"
             android:text="Review"
             android:textColor="@color/BlackDove"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_total_review"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/reviewHeader"
+            android:layout_alignBottom="@id/reviewHeader"
             android:layout_toEndOf="@+id/tv_nama_penjual"
             android:layout_toRightOf="@+id/tv_nama_penjual"
             android:text="(Total Reviews)"
-            android:textSize="13dp" />
+            android:textSize="13sp" />
 
         <RatingBar
             android:id="@+id/rb_makanan"
@@ -125,8 +113,8 @@
             android:layout_alignBottom="@+id/tv_total_review"
             android:layout_marginLeft="13dp"
             android:layout_marginStart="13dp"
-            android:layout_toEndOf="@+id/tv_job_penjual"
-            android:layout_toRightOf="@+id/tv_job_penjual"
+            android:layout_toEndOf="@+id/tv_total_review"
+            android:layout_toRightOf="@+id/tv_total_review"
             android:rating="4.0" />
 
         <ImageView
@@ -142,34 +130,26 @@
         <TextView
             android:id="@+id/tv_nama_reviewer"
             android:layout_width="wrap_content"
-            android:layout_height="15dp"
-            android:layout_alignLeft="@+id/tv_job_penjual"
-            android:layout_alignStart="@+id/tv_job_penjual"
-            android:layout_alignTop="@+id/img_reviewer"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/img_reviewer"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_below="@id/reviewHeader"
             android:text="Aprianil"
             android:textColor="@color/BlackDove"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_job_reviewer"
-            android:layout_width="wrap_content"
-            android:layout_height="15dp"
-            android:layout_alignLeft="@+id/tv_nama_reviewer"
-            android:layout_alignStart="@+id/tv_nama_reviewer"
-            android:layout_below="@+id/tv_nama_reviewer"
-            android:text="Mahasiswa" />
-
-        <TextView
             android:id="@+id/tv_review_content"
             android:layout_width="300dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/img_reviewer"
             android:layout_alignStart="@+id/img_reviewer"
             android:layout_below="@+id/img_reviewer"
             android:layout_marginBottom="@dimen/margin_24"
             android:layout_marginTop="8dp"
             android:text="This is review text from pemesan"
-            android:textSize="9dp" />
+            android:textSize="9sp" />
 
 
         <TextView
@@ -192,7 +172,7 @@
             android:layout_marginTop="22dp"
             android:text="Makanan Lainnya"
             android:textColor="@color/BlackDove"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
@@ -210,7 +190,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/tv_lihat_semua"
-            android:layout_marginTop="5dp"></android.support.v7.widget.RecyclerView>
+            android:layout_marginTop="5dp"/>
 
         <Button
             android:id="@+id/btn_order"

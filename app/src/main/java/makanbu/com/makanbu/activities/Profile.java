@@ -1,9 +1,11 @@
 package makanbu.com.makanbu.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
@@ -66,5 +68,10 @@ public class Profile extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("Review"));
         // Set the tabs to fill the entire layout.
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+    }
+
+    public void back(View view) {
+        Intent intent = new Intent(Profile.this, Home.class);
+        startActivity(intent);
     }
 }

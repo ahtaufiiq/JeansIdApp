@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
 import makanbu.com.makanbu.Constants;
 import makanbu.com.makanbu.R;
@@ -21,19 +23,24 @@ import makanbu.com.makanbu.model.Makanan;
 
 public class DetailMenuActivity extends AppCompatActivity {
 
-    ImageView gambar_card;
-    CircleImageView profileImage_card;
-    TextView namaMenu_card, jumlahReview_card, hargaMakanan_card;
-    RatingBar rating_card;
-    String gambar, profile;
-    String namaMenu, jumlahReview, hargaMakanan;
+    @BindView(R.id.img_masakan) ImageView gambar_card;
+    @BindView(R.id.img_avatar_penjual)CircleImageView profileImage_card;
+    @BindView(R.id.tv_nama_makanan) TextView namaMenu_card;
+    @BindView(R.id.tv_total_review) TextView jumlahReview_card;
+    @BindView(R.id.tv_harga_makanan) TextView hargaMakanan_card;
+    @BindView(R.id.rb_makanan) RatingBar rating_card;
+
+    String gambar, profile,namaMenu, jumlahReview, hargaMakanan;
     int rating;
+
+    Makanan makanan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_menu);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        ButterKnife.bind(this);
 
         if (getIntent() != null) {
             getData();
@@ -42,12 +49,6 @@ public class DetailMenuActivity extends AppCompatActivity {
     }
 
     private void setData() {
-        gambar_card = findViewById(R.id.img_masakan);
-        profileImage_card = findViewById(R.id.img_avatar_penjual);
-        namaMenu_card = findViewById(R.id.tv_nama_makanan);
-        jumlahReview_card = findViewById(R.id.tv_total_review);
-        hargaMakanan_card = findViewById(R.id.tv_harga_makanan);
-        rating_card = findViewById(R.id.rb_makanan);
 
         Glide.with(DetailMenuActivity.this)
                 .load(gambar)
@@ -57,24 +58,24 @@ public class DetailMenuActivity extends AppCompatActivity {
                 .load(profile)
                 .into(profileImage_card);
         namaMenu_card.setText(namaMenu);
-        jumlahReview_card.setText(jumlahReview);
+        jumlahReview_card.setText(jumlahReview+" Reviews");
         hargaMakanan_card.setText(hargaMakanan);
-        rating_card.setStepSize(rating);
+        rating_card.setNumStars(rating);
     }
 
     public void getData() {
-        Makanan makanan = getIntent().getExtras().getParcelable(Constants.KEY_MAKANAN);
+        makanan= getIntent().getExtras().getParcelable(Constants.KEY_MAKANAN);
         gambar = makanan.getGambar_card();
         profile = makanan.getProfileImage_card();
         hargaMakanan = makanan.getHargaMakanan_card();
         namaMenu = makanan.getNamaMenu_card();
         jumlahReview = makanan.getJumlahReview_card();
         rating = makanan.getRating_card();
-
     }
 
     public void order(View view) {
         Intent intent = new Intent(this, OrderActivity.class);
+        intent.putExtra(Constants.KEY_MAKANAN,makanan);
         startActivity(intent);
     }
 }

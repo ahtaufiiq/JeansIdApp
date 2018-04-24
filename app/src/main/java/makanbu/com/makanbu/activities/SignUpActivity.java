@@ -25,6 +25,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
 import makanbu.com.makanbu.Constants;
 import makanbu.com.makanbu.R;
@@ -34,15 +36,17 @@ public class SignUpActivity extends AppCompatActivity {
 
 
     private static final int PICK_IMAGE = 1;
-    // [START declare_auth]
-    private FirebaseAuth mAuth;
-
     private static final String TAG = "EmailPassword";
+
+    private FirebaseAuth mAuth;
     DatabaseReference databaseUser;
-    private EditText eml;
-    private EditText pass, mPhone;
-    String email, password;
+
+    @BindView(R.id.et_email) EditText mEmail;
+    @BindView(R.id.et_password) EditText pass;
+    @BindView(R.id.et_nomor) EditText mPhone;
+
     Button button;
+    String email, password;
     private Uri imageUri;
 
     private StorageReference mStorage;
@@ -52,10 +56,13 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+        ButterKnife.bind(this);
 
-        eml = (EditText) findViewById(R.id.et_email);
-        pass = (EditText) findViewById(R.id.et_password);
-        mPhone = findViewById(R.id.et_nomor);
+
+        databaseUser = FirebaseDatabase.getInstance().getReference(Constants.table_1);
+        mStorage = FirebaseStorage.getInstance().getReference().child("images");
+        mAuth = FirebaseAuth.getInstance();
+
         imageView = findViewById(R.id.setup_image);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,16 +75,10 @@ public class SignUpActivity extends AppCompatActivity {
         });
 
         button = findViewById(R.id.btn_daftar);
-        databaseUser = FirebaseDatabase.getInstance().getReference(Constants.table_1);
-        mStorage = FirebaseStorage.getInstance().getReference().child("images");
-        // [START initialize_auth]
-        mAuth = FirebaseAuth.getInstance();
-        // [END initialize_auth]
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                email = eml.getText().toString();
+                email = mEmail.getText().toString();
                 password = pass.getText().toString();
 
                 createAccount(email, password);
@@ -92,13 +93,11 @@ public class SignUpActivity extends AppCompatActivity {
     private void createAccount(final String email, final String password) {
         Log.d(TAG, "createAccount:" + email);
 
-        // [START create_user_with_email]
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             String id = mAuth.getUid();
                             add();
@@ -111,7 +110,6 @@ public class SignUpActivity extends AppCompatActivity {
                         }
                     }
                 });
-        // [END create_user_with_email]
     }
 
 
