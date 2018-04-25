@@ -80,4 +80,9 @@ public class LoginActivity extends AppCompatActivity {
         Intent pindah = new Intent(LoginActivity.this, SignUpActivity.class);
         startActivity(pindah);
     }
+
+    public void closeLanding(View view) {
+        Intent intent = new Intent(this, LandingActivity.class);
+        startActivity(intent);
+    }
 }

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".activities.DetailMenuActivity">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -10,8 +11,27 @@
         android:layout_height="match_parent"
         android:paddingLeft="@dimen/margin_24">
 
+        <com.synnapps.carouselview.CarouselView
+            android:id="@+id/img_slider"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:fillColor="#fff"
+            app:radius="6dp"
+            app:slideInterval="3000"
+            app:strokeColor="#FF7777"
+            app:strokeWidth="1dp"/>
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/back"
+            android:onClick="onBack"/>
+
         <ImageView
             android:id="@+id/img_masakan"
+            android:layout_below="@+id/btn_back"
             android:layout_width="match_parent"
             android:layout_height="224dp"
             android:scaleType="fitXY"
@@ -21,9 +41,9 @@
             android:id="@+id/tv_nama_makanan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/img_masakan"
             android:layout_marginTop="24dp"
             android:text="Ikan Bakar Bu Esi"
+            android:layout_below="@+id/img_masakan"
             android:textColor="@color/BlackDove"
             android:textSize="22sp"
             android:textStyle="bold" />
@@ -160,7 +180,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
             android:text="Read All Reviews"
-            android:textColor="@color/colorPrimary" />
+            android:textColor="@color/colorPrimary"
+            android:onClick="allReviews"/>
 
         <TextView
             android:id="@+id/tv_header_others"
@@ -183,7 +204,8 @@
             android:layout_alignEnd="@+id/tv_harga_makanan"
             android:layout_alignRight="@+id/tv_harga_makanan"
             android:text="lihat semua"
-            android:textColor="@color/colorPrimary" />
+            android:textColor="@color/colorPrimary"
+            android:onClick="viewAll"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_product"

@@ -175,4 +175,9 @@ public class OrderActivity extends Activity {
         }
         return WAInstallFlag;
     }
+
+    public void closeBtn(View view) {
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
+    }
 }

@@ -15,6 +15,7 @@
         android:layout_gravity="center_vertical"
         android:layout_marginTop="8dp"
         android:src="@drawable/ic_close_black_24dp"
+        android:onClick="closeLanding"
         />
 
     <TextView
