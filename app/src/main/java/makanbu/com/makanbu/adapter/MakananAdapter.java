@@ -1,7 +1,11 @@
 package makanbu.com.makanbu.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -89,9 +93,18 @@ public class MakananAdapter extends RecyclerView.Adapter<MakananAdapter.ViewHold
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Pair<View, String> pair1= Pair.create(holder.itemView.findViewById(R.id.img_masakan),"image");
+                Pair<View, String> pair2= Pair.create(holder.itemView.findViewById(R.id.tv_nama_makanan),"title");
+                ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context,pair1,pair2);
+
                 Intent i = new Intent(context, OrderActivity.class);
                 i.putExtra(Constants.KEY_MAKANAN, makanan);
-                context.startActivity(i);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    context.startActivity(i,optionsCompat.toBundle());
+                }else {
+                    context.startActivity(i);
+                }
+
             }
         });
 
