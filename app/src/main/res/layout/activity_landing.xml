@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="@dimen/margin_24"
-    android:layout_marginRight="@dimen/margin_24"
+    android:paddingLeft="@dimen/margin_24"
+    android:paddingRight="@dimen/margin_24"
     tools:context=".activities.LandingActivity">
 
     <ImageView

@@ -61,8 +61,6 @@ public class OrderActivity extends Activity {
     @BindView(R.id.tv_total_harga) TextView mTotalHarga;
 
     EditText mJumlahOrder;
-    EditText Alm;
-
 
     DatabaseReference databaseOrder;
 
@@ -79,7 +77,6 @@ public class OrderActivity extends Activity {
         databaseOrder = FirebaseDatabase.getInstance().getReference("Order");
 
         mJumlahOrder= findViewById(R.id.et_jumlah_order);
-        Alm=findViewById(R.id.et_alamat);
         mJumlahOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,7 +117,6 @@ public class OrderActivity extends Activity {
         mTotalHarga.setText("Rp "+hargaMakanan);
     }
 
-
     public void order(View view) {
         alamat = mAlamat.getText().toString();
         jumlah = mJumlahOrder.getText().toString();
@@ -140,7 +136,6 @@ public class OrderActivity extends Activity {
 
 
     }
-
 
     public void sendToWhatsapp() {
         String nomor=number;

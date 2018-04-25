@@ -49,6 +49,8 @@ public class SignUpActivity extends AppCompatActivity {
     String email, password;
     private Uri imageUri;
 
+    String downloadUrl1,downloadUrl2;
+
     private StorageReference mStorage;
     private CircleImageView imageView;
 
@@ -139,9 +141,9 @@ public class SignUpActivity extends AppCompatActivity {
 
                             if (uploadTask.isSuccessful()) {
 
-                                String download_url = uploadTask.getResult().getDownloadUrl().toString();
-                                User post = new User(id, email, phone, download_url);
-                                databaseUser.child(id).setValue(post);
+                                    downloadUrl1 = uploadTask.getResult().getDownloadUrl().toString();
+                                    User post = new User(id, email, phone, downloadUrl1);
+                                    databaseUser.child(id).setValue(post);
 
                             } else {
                                 Toast.makeText(SignUpActivity.this, "Error : " + uploadTask.getException().getMessage(), Toast.LENGTH_LONG).show();
