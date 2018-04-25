@@ -29,16 +29,16 @@ public class FragmentFood extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_food, container, false);
 
-        recyclerView = view.findViewById(R.id.recylerView);
-        recyclerView.setHasFixedSize(true);
+//        recyclerView = view.findViewById(R.id.recylerView);
+//        recyclerView.setHasFixedSize(true);
 
         listPosts = new ArrayList<>();
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+//        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        MakananAdapter postList = new MakananAdapter(getContext(), listPosts);
+//        MakananAdapter postList = new MakananAdapter(getContext(), listPosts);
 
-        recyclerView.setAdapter(postList);
+//        recyclerView.setAdapter(postList);
         return view;
     }
 }

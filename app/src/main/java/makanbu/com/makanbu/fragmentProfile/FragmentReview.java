@@ -29,16 +29,16 @@ public class FragmentReview extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_review, container, false);
 
-        recyclerView = view.findViewById(R.id.recylerView);
-        recyclerView.setHasFixedSize(true);
+//        recyclerView = view.findViewById(R.id.recylerView);
+//        recyclerView.setHasFixedSize(true);
 
         listPosts = new ArrayList<>();
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+//        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         ReviewAdapter postList = new ReviewAdapter(getContext(), listPosts);
 
-        recyclerView.setAdapter(postList);
+//        recyclerView.setAdapter(postList);
         return view;
     }
 
