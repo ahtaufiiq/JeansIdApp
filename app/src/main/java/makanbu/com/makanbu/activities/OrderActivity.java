@@ -128,22 +128,19 @@ public class OrderActivity extends Activity {
         hargaMakanan = mHargaSatuan.getText().toString();
 
         String id = databaseOrder.push().getKey();
-        Order order = new Order(alamat, jumlah, catatan, hargaMakanan);
-        databaseOrder.child(id).setValue(order);
-        sendToWhatsapp();
+        if (alamat.isEmpty()||jumlah.isEmpty()||catatan.isEmpty()||hargaMakanan.isEmpty()) {
+            Toast.makeText(this, "Tidak Boleh Kosong !!", Toast.LENGTH_SHORT).show();
 
-    }
 
-    // jika field kosong
-    private boolean isEmpty(EditText etText) {
-        String almt = Alm.getText().toString();
-        if (Alm.getText().toString().trim().length() > 0){
-            Alm.setError("Jangan Kosong");
-            return false;
+        }else {
+            Order order = new Order(alamat, jumlah, catatan, hargaMakanan);
+            databaseOrder.child(id).setValue(order);
+            sendToWhatsapp();
         }
-        return true;
+
 
     }
+
 
     public void sendToWhatsapp() {
         String nomor=number;
