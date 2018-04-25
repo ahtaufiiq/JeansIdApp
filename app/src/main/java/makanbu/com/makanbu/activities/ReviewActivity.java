@@ -21,4 +21,10 @@ public class ReviewActivity extends Activity {
         Intent intent = new Intent(this, Profile.class);
         startActivity(intent);
     }
+
+    public void back(View view) {
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
+
+    }
 }

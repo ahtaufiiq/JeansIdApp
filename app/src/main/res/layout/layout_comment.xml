@@ -8,7 +8,7 @@
         android:id="@+id/img_avatar"
         android:layout_width="@dimen/size_avatar"
         android:layout_height="@dimen/size_avatar"
-        android:src="@drawable/ic_launcher_background" />
+        android:src="@drawable/ic_launcher_background"/>
 
     <TextView
         android:id="@+id/tv_username"
