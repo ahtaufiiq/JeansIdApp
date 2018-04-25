@@ -2,6 +2,7 @@ package makanbu.com.makanbu.fragmentHome;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -29,7 +30,7 @@ public class Gorengan extends Fragment {
     private RecyclerView.Adapter adapter;
 
     private ArrayList<Makanan> listPosts;
-    private FirebaseFirestore firebaseFirestore;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     public Gorengan() {
     }
@@ -41,8 +42,17 @@ public class Gorengan extends Fragment {
 
         recyclerView = view.findViewById(R.id.recylerView);
         recyclerView.setHasFixedSize(true);
-        firebaseFirestore = FirebaseFirestore.getInstance();
         listPosts = new ArrayList<>();
+
+        swipeRefreshLayout = view.findViewById(R.id.swipeRefresh);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                listPosts.clear();
+                getProduct();
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new MakananAdapter(getContext(), listPosts);
@@ -53,7 +63,7 @@ public class Gorengan extends Fragment {
     }
 
     private void getProduct() {
-        Query firstQuery = FirebaseFirestore.getInstance().collection("Makanan").orderBy("timestamp", Query.Direction.DESCENDING);
+        Query firstQuery = FirebaseFirestore.getInstance().collection("Makanan").whereEqualTo("category","gorengan").orderBy("timestamp", Query.Direction.DESCENDING);
         firstQuery.addSnapshotListener(getActivity(), new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {

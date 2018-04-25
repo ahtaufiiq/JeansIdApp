@@ -2,7 +2,10 @@ package makanbu.com.makanbu.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -19,11 +22,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
+import makanbu.com.makanbu.NotificationActivity;
 import makanbu.com.makanbu.R;
 import makanbu.com.makanbu.fragmentHome.PagerAdapterHome;
 
 
-public class Home extends AppCompatActivity {
+public class Home extends AppCompatActivity
+                    implements NavigationView.OnNavigationItemSelectedListener{
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
@@ -57,10 +62,12 @@ public class Home extends AppCompatActivity {
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navmenu);
+        navigationView.setNavigationItemSelectedListener(this);
         carouselView = findViewById(R.id.aaa);
         carouselView.setPageCount(imgs.length);
         carouselView.setImageListener(imageListener);
+
     }
 
     public void createTabLayout() {
@@ -150,10 +157,9 @@ public class Home extends AppCompatActivity {
             case R.id.search:
                 Toast.makeText(this, "Ini pencarian", Toast.LENGTH_SHORT).show();
                 return true;
-
             case R.id.notif:
-                signOut();
-                Toast.makeText(this, "Ini notif", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Home.this,NotificationActivity.class);
+                startActivity(intent);
                 return true;
         }
 
@@ -166,4 +172,22 @@ public class Home extends AppCompatActivity {
         startActivity(i);
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        int id = item.getItemId();
+
+        if (id == R.id.logot) {
+            signOut();
+        } else if (id == R.id.prof) {
+            Intent intent = new Intent(Home.this,Profile.class);
+            startActivity(intent);
+        } else if (id == R.id.settings) {
+            Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
 }

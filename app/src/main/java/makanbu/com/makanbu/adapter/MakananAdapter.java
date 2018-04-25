@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,12 +13,16 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 import makanbu.com.makanbu.Constants;
 import makanbu.com.makanbu.R;
 import makanbu.com.makanbu.activities.DetailMenuActivity;
+import makanbu.com.makanbu.activities.OrderActivity;
 import makanbu.com.makanbu.model.Makanan;
 
 /**
@@ -65,13 +70,18 @@ public class MakananAdapter extends RecyclerView.Adapter<MakananAdapter.ViewHold
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         final Makanan makanan = makananList.get(position);
+
+        final FirebaseFirestore firebaseFirestore= FirebaseFirestore.getInstance();
         Glide.with(context)
                 .load(makanan.getGambar_card())
                 .into(holder.gambar_card);
         Glide.with(context)
-                .load(makanan.getProfileImage_card())
+                .load("https://lh5.googleusercontent.com/-jL5q8BDU4fY/AAAAAAAAAAI/AAAAAAAAAFc/8CjhbDkh-u8/s96-c/photo.jpg")
                 .into(holder.profileImage_card);
-        holder.hargaMakanan_card.setText(makanan.getHargaMakanan_card());
+        int harga = Integer.parseInt(makanan.getHargaMakanan_card());
+        Locale localeID = new Locale("in", "ID");
+        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+        holder.hargaMakanan_card.setText(formatRupiah.format(harga));
         holder.namaMenu_card.setText(makanan.getNamaMenu_card());
         holder.jumlahReview_card.setText(makanan.getJumlahReview_card() + " Review");
         holder.rating_card.setNumStars(makanan.getRating_card());
@@ -79,7 +89,7 @@ public class MakananAdapter extends RecyclerView.Adapter<MakananAdapter.ViewHold
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(context, DetailMenuActivity.class);
+                Intent i = new Intent(context, OrderActivity.class);
                 i.putExtra(Constants.KEY_MAKANAN, makanan);
                 context.startActivity(i);
             }
