@@ -2,13 +2,22 @@ package makanbu.com.makanbu.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageListener;
+
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,6 +39,7 @@ public class DetailMenuActivity extends AppCompatActivity {
     @BindView(R.id.tv_harga_makanan) TextView hargaMakanan_card;
     @BindView(R.id.rb_makanan) RatingBar rating_card;
 
+
     String gambar, profile,namaMenu, jumlahReview, hargaMakanan;
     int rating;
 
@@ -46,6 +56,7 @@ public class DetailMenuActivity extends AppCompatActivity {
             getData();
             setData();
         }
+
     }
 
     private void setData() {
@@ -76,6 +87,21 @@ public class DetailMenuActivity extends AppCompatActivity {
     public void order(View view) {
         Intent intent = new Intent(this, OrderActivity.class);
         intent.putExtra(Constants.KEY_MAKANAN,makanan);
+        startActivity(intent);
+    }
+
+    public void onBack(View view) {
+        Intent intent = new Intent(this, Home.class);
+        startActivity(intent);
+    }
+
+    public void viewAll(View view) {
+        Intent intent = new Intent(this, Profile.class);
+        startActivity(intent);
+    }
+
+    public void allReviews(View view) {
+        Intent intent = new Intent(this, Profile.class);
         startActivity(intent);
     }
 }
