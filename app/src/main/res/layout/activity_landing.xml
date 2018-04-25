@@ -67,6 +67,8 @@
         android:shadowColor="@color/BlackDove"
         android:text="Lanjutkan dengan google"
         android:textColor="@color/White"
+        android:paddingLeft="@dimen/iconMargin"
+        android:drawableLeft="@drawable/googleicon"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
