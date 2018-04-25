@@ -78,7 +78,10 @@ public class MakananAdapter extends RecyclerView.Adapter<MakananAdapter.ViewHold
         Glide.with(context)
                 .load("https://lh5.googleusercontent.com/-jL5q8BDU4fY/AAAAAAAAAAI/AAAAAAAAAFc/8CjhbDkh-u8/s96-c/photo.jpg")
                 .into(holder.profileImage_card);
-        holder.hargaMakanan_card.setText(makanan.getHargaMakanan_card());
+        int harga = Integer.parseInt(makanan.getHargaMakanan_card());
+        Locale localeID = new Locale("in", "ID");
+        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+        holder.hargaMakanan_card.setText(formatRupiah.format(harga));
         holder.namaMenu_card.setText(makanan.getNamaMenu_card());
         holder.jumlahReview_card.setText(makanan.getJumlahReview_card() + " Review");
         holder.rating_card.setNumStars(makanan.getRating_card());
