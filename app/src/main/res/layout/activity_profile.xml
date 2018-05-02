@@ -11,74 +11,76 @@
         <ImageView
             android:id="@+id/img_back"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginRight="340dp"
             android:layout_marginTop="5dp"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/back"
-            android:onClick="back"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/img_profile"
-            android:layout_width="70dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="1dp"
-            android:src="@drawable/buesii" />
+            android:onClick="back"
+            app:srcCompat="@drawable/back" />
 
         <LinearLayout
-            android:layout_width="192dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingLeft="15dp">
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/tv_profile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:letterSpacing="0.05"
-                android:lineSpacingExtra="2.2dp"
-                android:text="Bu Esi"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:layout_marginTop="8dp"/>
-            <TextView
-                android:id="@+id/tv_profilePekerjaan"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Guru TK Bhayangkari"/>
+            <ImageView
+                android:id="@+id/img_profile"
+                android:layout_width="70dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/buesii" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="192dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical"
+                android:paddingLeft="15dp">
 
-                <RatingBar
-                    android:id="@+id/rating_profile"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:numStars="5"
-                    android:paddingTop="6dp"
-                    android:rating="4.7"
-                    android:theme="@style/RatingBar"
-                    style="?android:attr/ratingBarStyleSmall"
-                    />
                 <TextView
-                    android:id="@+id/tv_rating"
+                    android:id="@+id/tv_profile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:letterSpacing="0.05"
-                    android:paddingBottom="10dp"
-                    android:text="4,7"
-                    android:textSize="10sp" />
+                    android:lineSpacingExtra="2.2dp"
+                    android:text="Bu Esi"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_profilePekerjaan"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Guru TK Bhayangkari" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RatingBar
+                        android:id="@+id/rating_profile"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:paddingTop="6dp"
+                        android:rating="4.7"
+                        android:theme="@style/RatingBar" />
+
+                    <TextView
+                        android:id="@+id/tv_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:letterSpacing="0.05"
+                        android:paddingBottom="10dp"
+                        android:text="4,7"
+                        android:textSize="10sp" />
+                </LinearLayout>
             </LinearLayout>
-            </LinearLayout>
-    </LinearLayout>
+        </LinearLayout>
+
         <android.support.design.widget.TabLayout
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
@@ -92,8 +94,8 @@
         <android.support.v4.view.ViewPager
             android:id="@+id/pager"
             android:layout_width="match_parent"
-            android:background="#FFFFFF"
             android:layout_height="553dp"
-            android:layout_below="@id/tab_layout" />
- </LinearLayout>
+            android:layout_below="@id/tab_layout"
+            android:background="#FFFFFF" />
+    </LinearLayout>
 </ScrollView>

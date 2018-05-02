@@ -23,7 +23,6 @@ import makanbu.com.makanbu.R;
 import makanbu.com.makanbu.adapter.MakananAdapter;
 import makanbu.com.makanbu.model.Makanan;
 
-
 public class Berkuah extends Fragment {
 
     private RecyclerView recyclerView;
@@ -65,7 +64,7 @@ public class Berkuah extends Fragment {
     }
 
     private void getProduct() {
-        Query firstQuery = FirebaseFirestore.getInstance().collection("Makanan").whereEqualTo("category","berkuah").orderBy("timestamp", Query.Direction.DESCENDING);
+        Query firstQuery = FirebaseFirestore.getInstance().collection("Makanan").whereEqualTo("category", "berkuah").orderBy("timestamp", Query.Direction.DESCENDING);
         firstQuery.addSnapshotListener(getActivity(), new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {

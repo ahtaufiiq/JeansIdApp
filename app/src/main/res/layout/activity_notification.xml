@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NotificationActivity">
+    tools:context=".activities.NotificationActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -26,8 +26,8 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recylerView"
-        android:layout_marginTop="38dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp" />
 
 </android.support.constraint.ConstraintLayout>

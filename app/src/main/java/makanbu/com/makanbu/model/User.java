@@ -2,7 +2,7 @@ package makanbu.com.makanbu.model;
 
 public class User {
 
-    String id, email, nomerHandphone, photo,photo2;
+    String id, email, nomerHandphone, photo, photo2;
 
     public User() {
     }
@@ -23,7 +23,7 @@ public class User {
         this.email = email;
         this.nomerHandphone = nomerHandphone;
         this.photo = photo;
-        this.photo2=photo2;
+        this.photo2 = photo2;
     }
 
     public String getPhoto2() {

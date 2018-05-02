@@ -41,15 +41,18 @@ public class SignUpActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     DatabaseReference databaseUser;
 
-    @BindView(R.id.et_email) EditText mEmail;
-    @BindView(R.id.et_password) EditText pass;
-    @BindView(R.id.et_nomor) EditText mPhone;
+    @BindView(R.id.et_email)
+    EditText mEmail;
+    @BindView(R.id.et_password)
+    EditText pass;
+    @BindView(R.id.et_nomor)
+    EditText mPhone;
 
     Button button;
     String email, password;
     private Uri imageUri;
 
-    String downloadUrl1,downloadUrl2;
+    String downloadUrl1, downloadUrl2;
 
     private StorageReference mStorage;
     private CircleImageView imageView;
@@ -141,9 +144,9 @@ public class SignUpActivity extends AppCompatActivity {
 
                             if (uploadTask.isSuccessful()) {
 
-                                    downloadUrl1 = uploadTask.getResult().getDownloadUrl().toString();
-                                    User post = new User(id, email, phone, downloadUrl1);
-                                    databaseUser.child(id).setValue(post);
+                                downloadUrl1 = uploadTask.getResult().getDownloadUrl().toString();
+                                User post = new User(id, email, phone, downloadUrl1);
+                                databaseUser.child(id).setValue(post);
 
                             } else {
                                 Toast.makeText(SignUpActivity.this, "Error : " + uploadTask.getException().getMessage(), Toast.LENGTH_LONG).show();

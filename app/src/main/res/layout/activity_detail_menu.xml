@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".activities.DetailMenuActivity">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -19,21 +19,21 @@
             app:radius="6dp"
             app:slideInterval="3000"
             app:strokeColor="#FF7777"
-            app:strokeWidth="1dp"/>
+            app:strokeWidth="1dp" />
 
         <ImageView
             android:id="@+id/btn_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="onBack"
             android:scaleType="fitXY"
-            android:src="@drawable/back"
-            android:onClick="onBack"/>
+            android:src="@drawable/back" />
 
         <ImageView
             android:id="@+id/img_masakan"
-            android:layout_below="@+id/btn_back"
             android:layout_width="match_parent"
             android:layout_height="224dp"
+            android:layout_below="@+id/btn_back"
             android:scaleType="fitXY"
             android:src="@drawable/ikanbakar" />
 
@@ -41,9 +41,9 @@
             android:id="@+id/tv_nama_makanan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/img_masakan"
             android:layout_marginTop="24dp"
             android:text="Ikan Bakar Bu Esi"
-            android:layout_below="@+id/img_masakan"
             android:textColor="@color/BlackDove"
             android:textSize="22sp"
             android:textStyle="bold" />
@@ -151,10 +151,10 @@
             android:id="@+id/tv_nama_reviewer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/img_reviewer"
+            android:layout_below="@id/reviewHeader"
             android:layout_marginLeft="13dp"
             android:layout_marginStart="13dp"
-            android:layout_below="@id/reviewHeader"
+            android:layout_toRightOf="@id/img_reviewer"
             android:text="Aprianil"
             android:textColor="@color/BlackDove"
             android:textStyle="bold" />
@@ -179,9 +179,9 @@
             android:layout_below="@+id/tv_review_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
+            android:onClick="allReviews"
             android:text="Read All Reviews"
-            android:textColor="@color/colorPrimary"
-            android:onClick="allReviews"/>
+            android:textColor="@color/colorPrimary" />
 
         <TextView
             android:id="@+id/tv_header_others"
@@ -203,16 +203,16 @@
             android:layout_alignBottom="@+id/tv_header_others"
             android:layout_alignEnd="@+id/tv_harga_makanan"
             android:layout_alignRight="@+id/tv_harga_makanan"
+            android:onClick="viewAll"
             android:text="lihat semua"
-            android:textColor="@color/colorPrimary"
-            android:onClick="viewAll"/>
+            android:textColor="@color/colorPrimary" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_product"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/tv_lihat_semua"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp" />
 
         <Button
             android:id="@+id/btn_order"

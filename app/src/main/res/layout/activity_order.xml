@@ -2,7 +2,6 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -24,8 +23,8 @@
                 android:layout_width="16dp"
                 android:layout_height="16dp"
                 android:layout_gravity="center_vertical"
-                android:src="@drawable/ic_close_black_24dp"
-                android:onClick="closeBtn"/>
+                android:onClick="closeBtn"
+                android:src="@drawable/ic_close_black_24dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -41,13 +40,13 @@
 
         <ImageView
             android:id="@+id/img_masakan"
-            android:transitionName="image"
             android:layout_width="match_parent"
             android:layout_height="140dp"
             android:layout_marginTop="@dimen/margin_24"
             android:background="@drawable/rounded_banner"
             android:scaleType="fitXY"
-            android:src="@drawable/slide" />
+            android:src="@drawable/slide"
+            android:transitionName="image" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -58,18 +57,18 @@
                 android:id="@+id/img_avatar"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@drawable/bu_esi"  />
+                android:src="@drawable/bu_esi" />
 
             <TextView
                 android:id="@+id/tv_nama_makanan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:transitionName="title"
                 android:layout_marginLeft="@dimen/margin_16"
                 android:layout_toRightOf="@id/img_avatar"
                 android:text="Sate Kambing Bu Esi"
                 android:textSize="@dimen/text_size_16"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:transitionName="title" />
 
             <TextView
                 android:id="@+id/tv_jumlah_review"
@@ -90,9 +89,9 @@
                 android:layout_below="@id/tv_nama_makanan"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="4dp"
-                android:rating="4"
                 android:layout_toRightOf="@id/tv_jumlah_review"
-                android:isIndicator="true" />
+                android:isIndicator="true"
+                android:rating="4" />
 
             <TextView
                 android:id="@+id/tv_harga_makanan"
@@ -207,19 +206,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.25"  />
+                app:layout_constraintGuide_percent="0.25" />
 
         </android.support.constraint.ConstraintLayout>
 
         <EditText
             android:id="@+id/et_catatan"
             android:layout_width="match_parent"
-            android:layout_height="136dp"
-            android:layout_marginTop="@dimen/margin_24"
+            android:layout_height="130dp"
+            android:layout_marginLeft="@dimen/margin_16"
+            android:layout_marginRight="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_16"
             android:background="@drawable/edittext_bg"
+            android:gravity="top|left"
             android:hint="Tambahan informasi kepada penjual"
             android:inputType="textMultiLine"
-            android:textSize="12sp" />
+            android:lines="6"
+            android:overScrollMode="always"
+            android:padding="16dp"
+            android:scrollHorizontally="false"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/order_btn"
@@ -229,8 +238,8 @@
             android:layout_marginTop="@dimen/margin_24"
             android:background="@drawable/rounded_button"
             android:elevation="8dp"
-            android:text="Order"
             android:onClick="order"
+            android:text="Order"
             android:textColor="#F9F9F9"
             android:textSize="20sp" />
     </LinearLayout>

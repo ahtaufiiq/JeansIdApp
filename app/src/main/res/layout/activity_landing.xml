@@ -49,8 +49,8 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginBottom="@dimen/margin_8"
+        android:layout_marginTop="8dp"
         android:text="Welcome to Makanbu"
         android:textColor="@color/Red_Dove"
         android:textSize="24dp"
@@ -63,12 +63,12 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_24"
         android:background="@drawable/rounded_button"
+        android:drawableLeft="@drawable/googleicon"
         android:onClick="login_google"
+        android:paddingLeft="@dimen/iconMargin"
         android:shadowColor="@color/BlackDove"
         android:text="Lanjutkan dengan google"
         android:textColor="@color/White"
-        android:paddingLeft="@dimen/iconMargin"
-        android:drawableLeft="@drawable/googleicon"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button

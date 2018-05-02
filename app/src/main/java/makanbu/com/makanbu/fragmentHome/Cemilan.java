@@ -63,7 +63,7 @@ public class Cemilan extends Fragment {
     }
 
     private void getProduct() {
-        Query firstQuery = FirebaseFirestore.getInstance().collection("Makanan").whereEqualTo("category","cemilan").orderBy("timestamp", Query.Direction.DESCENDING);
+        Query firstQuery = FirebaseFirestore.getInstance().collection("Makanan").whereEqualTo("category", "cemilan").orderBy("timestamp", Query.Direction.DESCENDING);
         firstQuery.addSnapshotListener(getActivity(), new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {

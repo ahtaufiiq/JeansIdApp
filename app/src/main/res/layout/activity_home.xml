@@ -5,9 +5,9 @@
     android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="makanbu.com.makanbu.activities.Home"
     tools:openDrawer="start"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_home">
 
     <!--<include layout="@layout/app_bar_main"/>-->
@@ -30,7 +30,7 @@
                 app:radius="6dp"
                 app:slideInterval="3000"
                 app:strokeColor="#FF7777"
-                app:strokeWidth="1dp"/>
+                app:strokeWidth="1dp" />
 
             <android.support.design.widget.TabLayout
                 android:id="@+id/tab_layout"
@@ -50,14 +50,15 @@
 
         </LinearLayout>
     </ScrollView>
+
     <android.support.design.widget.NavigationView
         android:id="@+id/navmenu"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="#fff"
+        android:fitsSystemWindows="true"
         app:headerLayout="@layout/header"
         app:itemIconTint="#CB202D"
-        android:fitsSystemWindows="true"
-        app:menu="@menu/drawermenu"/>
+        app:menu="@menu/drawermenu" />
 </android.support.v4.widget.DrawerLayout>

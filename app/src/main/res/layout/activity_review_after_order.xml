@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="@dimen/screenPadding"
     tools:context=".activities.ReviewActivity">
 
     <ImageView
         android:id="@+id/img_back"
         android:layout_width="match_parent"
-        android:layout_marginRight="310dp"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/back"
-        android:onClick="back"/>
+        android:layout_marginRight="310dp"
+        android:onClick="back"
+        app:srcCompat="@drawable/back" />
 
     <TextView
         android:id="@+id/ReviewAfterOrder"
@@ -26,7 +26,7 @@
         android:text="@string/review"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/TitleScreen"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
 
     <ImageView
@@ -41,23 +41,23 @@
         android:id="@+id/profileName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bu Esi"
-        android:textSize="24dp"
-        android:layout_toRightOf="@id/profileImage"
         android:layout_below="@id/ReviewAfterOrder"
-        android:layout_marginTop="36dp"
         android:layout_marginLeft="16dp"
-        android:textStyle="bold"
-        android:textColor="@color/colorBlack" />
+        android:layout_marginTop="36dp"
+        android:layout_toRightOf="@id/profileImage"
+        android:text="Bu Esi"
+        android:textColor="@color/colorBlack"
+        android:textSize="24dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/profileJobs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/profileName"
-        android:layout_toRightOf="@id/profileImage"
-        android:layout_marginTop="2dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/profileImage"
         android:text="Guru TK Bhayankari"
         android:textSize="12sp" />
 
@@ -72,17 +72,17 @@
 
     <RatingBar
         android:id="@+id/ratingBar"
+        style="?android:attr/ratingBarStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/question"
+        android:layout_marginTop="6dp"
+        android:isIndicator="true"
         android:scaleX="2"
         android:scaleY="2"
         android:transformPivotX="0dp"
-        android:transformPivotY="0dp"
-        android:isIndicator="true"
-        style="?android:attr/ratingBarStyleSmall"
 
-        android:layout_marginTop="6dp" />
+        android:transformPivotY="0dp" />
 
     <TextView
         android:id="@+id/textArea"
@@ -92,23 +92,23 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/ratingBar"
         android:layout_marginTop="36dp"
+        android:background="@drawable/edittext_bg"
         android:hint="Review"
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorPrimary"
-        android:textSize="14sp"
-        android:background="@drawable/edittext_bg" />
+        android:textSize="14sp" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textArea"
         android:layout_marginTop="25dp"
-        android:text="Review"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:background="@drawable/rounded_button"
         android:onClick="review"
+        android:text="Review"
         android:textColor="@color/colorPrimaryDark"
-        android:background="@drawable/rounded_button" />
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>

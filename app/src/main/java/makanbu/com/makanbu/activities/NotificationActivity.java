@@ -1,10 +1,9 @@
-package makanbu.com.makanbu;
+package makanbu.com.makanbu.activities;
 
+import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -18,9 +17,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 
-import makanbu.com.makanbu.adapter.MakananAdapter;
+import makanbu.com.makanbu.R;
 import makanbu.com.makanbu.adapter.NotificationAdapter;
-import makanbu.com.makanbu.model.Makanan;
 import makanbu.com.makanbu.model.Notification;
 
 public class NotificationActivity extends AppCompatActivity {
@@ -32,6 +30,7 @@ public class NotificationActivity extends AppCompatActivity {
     private FirebaseFirestore firebaseFirestore;
     private SwipeRefreshLayout swipeRefreshLayout;
     Query databasePost;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +47,7 @@ public class NotificationActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(adapter);
     }
+
     public void onStart() {
         super.onStart();
         databasePost.addValueEventListener(new ValueEventListener() {
@@ -65,6 +65,7 @@ public class NotificationActivity extends AppCompatActivity {
 
                 adapter.notifyDataSetChanged();
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
 

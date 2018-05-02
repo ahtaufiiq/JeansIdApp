@@ -6,15 +6,15 @@ import android.os.Parcelable;
 public class Makanan implements Parcelable {
 
 
-    private String idMakanan,gambar_card, profileImage_card;
+    private String idMakanan, gambar_card, profileImage_card;
     private String namaMenu_card, jumlahReview_card, hargaMakanan_card, phone_number;
     private int rating_card;
 
     public Makanan() {
     }
 
-    public Makanan(String idMakanan,String gambar_card, String profileImage_card, String namaMenu_card, String jumlahReview_card, String hargaMakanan_card, String phone_number, int rating_card) {
-        this.idMakanan=idMakanan;
+    public Makanan(String idMakanan, String gambar_card, String profileImage_card, String namaMenu_card, String jumlahReview_card, String hargaMakanan_card, String phone_number, int rating_card) {
+        this.idMakanan = idMakanan;
         this.gambar_card = gambar_card;
         this.profileImage_card = profileImage_card;
         this.namaMenu_card = namaMenu_card;

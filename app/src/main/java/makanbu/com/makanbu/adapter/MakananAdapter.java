@@ -8,7 +8,6 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.util.Pair;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +24,6 @@ import java.util.Locale;
 
 import makanbu.com.makanbu.Constants;
 import makanbu.com.makanbu.R;
-import makanbu.com.makanbu.activities.DetailMenuActivity;
 import makanbu.com.makanbu.activities.OrderActivity;
 import makanbu.com.makanbu.model.Makanan;
 
@@ -75,12 +73,12 @@ public class MakananAdapter extends RecyclerView.Adapter<MakananAdapter.ViewHold
     public void onBindViewHolder(final ViewHolder holder, int position) {
         final Makanan makanan = makananList.get(position);
 
-        final FirebaseFirestore firebaseFirestore= FirebaseFirestore.getInstance();
+        final FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
         Glide.with(context)
                 .load(makanan.getGambar_card())
                 .into(holder.gambar_card);
         Glide.with(context)
-                .load("https://lh5.googleusercontent.com/-jL5q8BDU4fY/AAAAAAAAAAI/AAAAAAAAAFc/8CjhbDkh-u8/s96-c/photo.jpg")
+                .load(makanan.getProfileImage_card())
                 .into(holder.profileImage_card);
         int harga = Integer.parseInt(makanan.getHargaMakanan_card());
         Locale localeID = new Locale("in", "ID");
@@ -93,15 +91,15 @@ public class MakananAdapter extends RecyclerView.Adapter<MakananAdapter.ViewHold
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Pair<View, String> pair1= Pair.create(holder.itemView.findViewById(R.id.img_masakan),"image");
-                Pair<View, String> pair2= Pair.create(holder.itemView.findViewById(R.id.tv_nama_makanan),"title");
-                ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context,pair1,pair2);
+                Pair<View, String> pair1 = Pair.create(holder.itemView.findViewById(R.id.img_masakan), "image");
+                Pair<View, String> pair2 = Pair.create(holder.itemView.findViewById(R.id.tv_nama_makanan), "title");
+                ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context, pair1, pair2);
 
                 Intent i = new Intent(context, OrderActivity.class);
                 i.putExtra(Constants.KEY_MAKANAN, makanan);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    context.startActivity(i,optionsCompat.toBundle());
-                }else {
+                    context.startActivity(i, optionsCompat.toBundle());
+                } else {
                     context.startActivity(i);
                 }
 

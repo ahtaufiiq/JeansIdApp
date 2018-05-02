@@ -22,13 +22,12 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
-import makanbu.com.makanbu.NotificationActivity;
 import makanbu.com.makanbu.R;
 import makanbu.com.makanbu.fragmentHome.PagerAdapterHome;
 
 
 public class Home extends AppCompatActivity
-                    implements NavigationView.OnNavigationItemSelectedListener{
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
@@ -57,7 +56,7 @@ public class Home extends AppCompatActivity
         createTabLayout();
         createViewPager();
 
-        mDrawerLayout = (DrawerLayout)findViewById(R.id.drawer);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
@@ -89,8 +88,6 @@ public class Home extends AppCompatActivity
     public void createViewPager() {
         viewPager = findViewById(R.id.pager);
         final PagerAdapterHome adapter = new PagerAdapterHome(getSupportFragmentManager(), tabLayout.getTabCount());
-        viewPager.setAdapter(adapter);
-        viewPager.setAdapter(adapter);
         viewPager.setAdapter(adapter);
 
         // Setting a listener for clicks.
@@ -156,7 +153,7 @@ public class Home extends AppCompatActivity
         switch (item.getItemId()) {
 
             case R.id.notif:
-                Intent intent = new Intent(Home.this,NotificationActivity.class);
+                Intent intent = new Intent(Home.this, NotificationActivity.class);
                 startActivity(intent);
                 return true;
         }
@@ -178,7 +175,7 @@ public class Home extends AppCompatActivity
         if (id == R.id.logot) {
             signOut();
         } else if (id == R.id.prof) {
-            Intent intent = new Intent(Home.this,Profile.class);
+            Intent intent = new Intent(Home.this, Profile.class);
             startActivity(intent);
         } else if (id == R.id.settings) {
             Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();

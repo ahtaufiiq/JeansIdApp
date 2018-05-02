@@ -1,26 +1,18 @@
 package makanbu.com.makanbu.adapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import makanbu.com.makanbu.Constants;
 import makanbu.com.makanbu.R;
-import makanbu.com.makanbu.activities.OrderActivity;
-import makanbu.com.makanbu.model.Makanan;
 import makanbu.com.makanbu.model.Notification;
 
 public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapter.ViewHolder> {
@@ -41,8 +33,8 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         public ViewHolder(View itemView) {
             super(itemView);
 
-            imageView= itemView.findViewById(R.id.circleImageView);
-            textView= itemView.findViewById(R.id.text);
+            imageView = itemView.findViewById(R.id.circleImageView);
+            textView = itemView.findViewById(R.id.text);
         }
     }
 
@@ -60,7 +52,6 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
                 .load(makanan.getId())
                 .into(holder.imageView);
         holder.textView.setText(makanan.getText());
-
 
 
     }

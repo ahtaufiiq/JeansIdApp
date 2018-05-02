@@ -2,7 +2,7 @@ package makanbu.com.makanbu.model;
 
 public class Notification {
 
-    private String id,text;
+    private String id, text;
 
     public Notification() {
     }
