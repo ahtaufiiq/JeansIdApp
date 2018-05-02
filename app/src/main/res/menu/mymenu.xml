@@ -3,11 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.marissagift.homee.Home">
 
-    <item
-        android:id="@+id/search"
-        android:title="Search"
-        app:showAsAction="always"
-        android:icon="@drawable/ic_search" />
 
     <item
         android:id="@+id/notif"
