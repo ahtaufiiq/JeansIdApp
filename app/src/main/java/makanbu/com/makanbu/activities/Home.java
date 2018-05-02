@@ -154,9 +154,7 @@ public class Home extends AppCompatActivity
         }
 
         switch (item.getItemId()) {
-            case R.id.search:
-                Toast.makeText(this, "Ini pencarian", Toast.LENGTH_SHORT).show();
-                return true;
+
             case R.id.notif:
                 Intent intent = new Intent(Home.this,NotificationActivity.class);
                 startActivity(intent);
